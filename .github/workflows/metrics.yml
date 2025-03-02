@@ -32,7 +32,5 @@ jobs:
           # enable/configure other plugins:
           plugin_stars: true
           plugin_wakatime: true
-          plugin_wakatime_url: https://wakapi.jonaspammer.at
-          plugin_wakatime_user: JonasPammer
           plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
           plugin_activity: false
