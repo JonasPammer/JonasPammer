@@ -107,8 +107,13 @@ function Elevate {
       Show-Output "This script requires admin access. Elevating."
       Show-Output "$command"
       # Use newer PowerShell if available.
-      if (Test-CommandExists "pwsh") { $shell = "pwsh" } else { $shell = "powershell" }
-      Start-Process -FilePath "$shell" -Verb RunAs -ArgumentList ('-NoProfile -ExecutionPolicy Bypass -NoExit -Command "cd {0}; {1}" -elevated' -f ($pwd, $command))
+      if (Test-CommandExists "wt") {
+        $psArgs = '-NoProfile -ExecutionPolicy Bypass -NoExit -File "{0}" -elevated' -f $command
+        Start-Process -FilePath "wt" -Verb RunAs -ArgumentList ('powershell {0}' -f $psArgs) -WorkingDirectory $pwd
+      } else {
+        if (Test-CommandExists "pwsh") { $shell = "pwsh" } else { $shell = "powershell" }
+        Start-Process -FilePath "$shell" -Verb RunAs -ArgumentList ('-NoProfile -ExecutionPolicy Bypass -NoExit -File "{0}" -elevated' -f $command) -WorkingDirectory $pwd
+      }
       Show-Output "The script has been started in another window. You can close this window now."
     }
     exit
