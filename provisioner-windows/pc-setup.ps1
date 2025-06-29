@@ -107,6 +107,25 @@ function InstallAndUpdateApplications() {
   Write-Host ""
 }
 
+function InstallGradle(){
+  if (Test-CommandExists "gradle") {
+    Show-Output ">> Skipping Gradle Install (already installed)"
+    return
+  }
+  Show-Output ">> Install Gradle"
+  $gradle_version = "8.14.2"
+  $gradle_url = "https://services.gradle.org/distributions/gradle-$gradle_version-bin.zip"
+  $gradle_zip = "$env:TEMP\gradle-$gradle_version-bin.zip"
+  $gradle_dir = "C:\Program Files\Gradle" # C:\Gradle in documentation
+  $gradle_bin_dir = "$gradle_dir\gradle-$gradle_version\bin"
+
+  Invoke-WebRequest -Uri $gradle_url -OutFile $gradle_zip
+  Expand-Archive -Path $gradle_zip -DestinationPath $gradle_dir -Force
+  Remove-Item $gradle_zip
+
+  Add-ToSystemPath $gradle_bin_dir
+}
+
 function SetupPowershellProfile() {
   Show-Output ">> Setup Powershell Profile"
 
@@ -301,9 +320,10 @@ Install-1PasswordCLI
 # Manual PRE Commands:
 Stop-Process -Name "Greenshot" -Force -ErrorAction SilentlyContinue
 # Actual Loop:
-InstallAndUpdateApplications
+#InstallAndUpdateApplications
 # Manual POST Commands:
 Add-ToSystemPath "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg"
+InstallGradle
 
 SetupPowershellProfile
 ConfigureGit

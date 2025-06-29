@@ -381,6 +381,15 @@ applications:
       knowing that anyone could potentially screenshot and read it.
       So, be mindful of the content you share and who you communicate with on the platform.
 
+  - display_name: "Discord Chat Exporter GUI"
+    link: "https://github.com/Tyrrrz/DiscordChatExporter"
+    category: General
+    status: eh
+    provider: winget
+    winget_id: Tyrrrz.DiscordChatExporter.GUI
+    winget_scope: machine
+    description_short: Export Discord Chat History to HTML
+
   - display_name: "Outlook"
     category: General
     status: daily-driver
@@ -433,6 +442,26 @@ applications:
     description_full: |
       Has Face Recognizition ability and advanced searching
 
+  - display_name: ExifTool
+    link: "https://exiftool.org/"
+    category: General
+    status: eh
+    provider: winget
+    winget_id: OliverBetz.ExifTool
+    winget_scope: machine
+    description_short: Command line tool for reading, writing, and editing meta information in a wide variety of files
+    description_full: |
+      I use it for adding tags
+
+  - display_name: "FFmpeg"
+    link: "https://ffmpeg.org/"
+    category: General
+    status: eh
+    provider: winget
+    winget_id: Gyan.FFmpeg
+    winget_scope: machine
+    description_short: Command line tool for converting video and audio files
+
   # Keep uninstallation of Greenshot above the installation of ShareX so that
   # ShareX has more success at registering the prntscr button
   - display_name: "Greenshot"
@@ -477,6 +506,17 @@ applications:
       *WHILE* keeping all the bookmarks
       (I wouldn't use this program without these 2 features),
       OCR with After-Editing features, Conversion to/from other formats.
+
+  - display_name: "QPDF"
+    link: "https://qpdf.sourceforge.io/"
+    category: General
+    status: not-used
+    provider: winget
+    winget_id: QPDF.QPDF
+    winget_scope: machine
+    description_short: Command line tool for transforming and inspecting PDF files
+    description_full: |
+      I used it to crack pdf password once.
 
   - display_name: "PicPick"
     link: "https://picpick.app/"
@@ -833,9 +873,18 @@ applications:
   - display_name: "HiSuite"
     link: "https://consumer.huawei.com/en/support/hisuite/"
     category: Computer Management Utilities
-    status: eh
+    status: not-used
     description_full: |
       Used to backup and restore all files and settings off of my Huawei Smartphone.
+
+  - display_name: "Easy Connection to Screen"
+    link: "https://www.samsung.com/latin_en/support/tv-audio-video/how-to-use-the-pc-on-tv-on-your-samsung-smart-tv/"
+    category: Computer Management Utilities
+    status: eh
+    provider: winget
+    winget_id: Samsung.EasyConnectToScreen
+    winget_scope: machine
+    description_full: Connect from Samsung Smart TV to Windows PC.
 
   - display_name: "ShutUp10"
     link: "https://www.oo-software.com/en/shutup10"
@@ -943,6 +992,14 @@ applications:
       * Tom Clancy's Rainbow Six Siege
       * Phasmophobia
 
+  - display_name: r2modman
+    category: Gaming
+    status: eh
+    provider: winget
+    winget_id: ebkr.r2modman
+    winget_scope: machine
+    description_short: Mod Manager for Lethal Company
+
   - display_name: "Ubisoft Connect"
     link: "https://ubisoftconnect.com/"
     category: Gaming
@@ -999,6 +1056,15 @@ applications:
       energy but also adds lots of magic (e.G: A ring that lets you fly freely
       at the cost of the mentioned material-value)
       *** Old Minecraft Version (1.2.5) Vibes hard
+
+  - display_name: "Modrinth App"
+    link: "https://modrinth.com/"
+    category: Gaming
+    status: eh
+    provider: winget
+    winget_id: Modrinth.ModrinthApp
+    winget_scope: machine
+    description_short: Minecraft Launcher from Modrinth Integrated for Easy Installation of Mods
 
   - display_name: "Oculus Quest Link"
     link: "https://www.oculus.com/setup/"
