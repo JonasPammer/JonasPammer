@@ -6,7 +6,8 @@ allow_reboot: true
 exit_anyways_if_reboot_required: false
 
 wsl_install: false
-wsl_distro: Ubuntu-20.04
+# https://raw.githubusercontent.com/microsoft/WSL/master/distributions/DistributionInfo.json
+wsl_distro: Ubuntu # 24.0.4
 
 setup_gpg: true
 gpg_email: opensource@jonaspammer.at

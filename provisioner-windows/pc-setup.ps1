@@ -110,26 +110,48 @@ function InstallAndUpdateApplications() {
 function SetupPowershellProfile() {
   Show-Output ">> Setup Powershell Profile"
 
+  # Update PowerShellGet first to fix DateTime conversion issues
+  Show-Output "Updating PowerShellGet to latest version"
+  try {
+    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -ErrorAction SilentlyContinue
+    Install-Module -Name PowerShellGet -Force -AllowClobber -Scope AllUsers -ErrorAction SilentlyContinue
+    Import-Module -Name PowerShellGet -Force -ErrorAction SilentlyContinue
+  }
+  catch {
+    Show-Output "Warning: Could not update PowerShellGet, continuing with existing version"
+  }
+
+  Set-ExecutionPolicy RemoteSigned -Scope Process
+
   ## PowerShell environment for Git (e.g. adds tab completion)
   Show-Output "Adding PoshGit to PowerShell Profile"
-  Set-ExecutionPolicy RemoteSigned -Scope Process
-  PowerShellGet\Install-Module posh-git -Scope AllUsers -Force
-  PowerShellGet\Update-Module posh-git
-  # This will add a line containing Import-Module posh-git to the file $profile.CurrentUserAllHosts:
-  # Would display the following Warning Message when used multiple times, if not for '-SilentlyContinue':
-  # "Skipping add of posh-git import to file 'C:\Users\priva\Documents\WindowsPowerShell\profile.ps1'"
-  # "posh-git appears to already be imported in one of your profile scripts."
-  Add-PoshGitToProfile -AllHosts -WarningAction SilentlyContinue
+  try {
+    Install-Module posh-git -Scope AllUsers -Force -ErrorAction Stop -AllowClobber
+    Update-Module posh-git -ErrorAction SilentlyContinue
+    # This will add a line containing Import-Module posh-git to the file $profile.CurrentUserAllHosts:
+    # Would display the following Warning Message when used multiple times, if not for '-SilentlyContinue':
+    # "Skipping add of posh-git import to file 'C:\Users\priva\Documents\WindowsPowerShell\profile.ps1'"
+    # "posh-git appears to already be imported in one of your profile scripts."
+    Add-PoshGitToProfile -AllHosts -WarningAction SilentlyContinue
+  }
+  catch {
+    Show-Output "Warning: Failed to install/update posh-git: $($_.Exception.Message)"
+  }
 
   ## PowerShell helpers for SSH (e.g. Start-SshAgent -Quiet)
   Show-Output "Adding PoshSshell to PowerShell Profile"
-  PowerShellGet\Install-Module posh-sshell -Scope AllUsers -Force
-  PowerShellGet\Update-Module posh-sshell
-  # This will add a line containing Import-Module posh-sshell to the file $profile.CurrentUserAllHosts:
-  # Would display the following Warning Message when used multiple times, if not for '-SilentlyContinue':
-  # "Skipping add of posh-posh-sshell import to file 'C:\Users\priva\Documents\WindowsPowerShell\profile.ps1'"
-  # "posh-posh-sshell appears to already be imported in one of your profile scripts."
-  Add-PoshSshellToProfile -AllHosts -WarningAction SilentlyContinue
+  try {
+    Install-Module posh-sshell -Scope AllUsers -Force -ErrorAction Stop -AllowClobber
+    Update-Module posh-sshell -ErrorAction SilentlyContinue
+    # This will add a line containing Import-Module posh-sshell to the file $profile.CurrentUserAllHosts:
+    # Would display the following Warning Message when used multiple times, if not for '-SilentlyContinue':
+    # "Skipping add of posh-posh-sshell import to file 'C:\Users\priva\Documents\WindowsPowerShell\profile.ps1'"
+    # "posh-posh-sshell appears to already be imported in one of your profile scripts."
+    Add-PoshSshellToProfile -AllHosts -WarningAction SilentlyContinue
+  }
+  catch {
+    Show-Output "Warning: Failed to install/update posh-sshell: $($_.Exception.Message)"
+  }
 
   Show-Output "Adding StartSshAgent Command to PowerShell Profile"
   Get-Service -Name ssh-agent | Set-Service -StartupType Manual
@@ -142,16 +164,37 @@ function SetupPowershellProfile() {
 
 function ConfigureGit() {
   Show-Output ">> Configure Git"
-  Show-Output "Changing max-cache-ttl in gpg-agent.conf..."
-  # (assigning to a variable to make output silent)
-  Set-Content -Path "${env:APPDATA}\gnupg\gpg-agent.conf" -Value "default-cache-ttl 86400$([System.Environment]::NewLine)max-cache-ttl 86400"
-  gpgconf.exe --reload gpg-agent
-  # Verify with: gpgconf.exe --list-options gpg-agent
 
-  Show-Output "Executing commands to alter git config..."
-  $gpg_program = $(Get-Command gpg | Select-Object source)
-  $gpg_program_source = $gpg_program.Source
-  git config --global gpg.gpg.program "$gpg_program_source"
+  # Configure GPG agent if GPG is available
+  try {
+    $gpg_program = Get-Command gpg -ErrorAction Stop
+    Show-Output "Changing max-cache-ttl in gpg-agent.conf..."
+
+    # Ensure gnupg directory exists
+    $gnupgDir = "${env:APPDATA}\gnupg"
+    if (-not (Test-Path $gnupgDir)) {
+      New-Item -ItemType Directory -Path $gnupgDir -Force | Out-Null
+    }
+
+    # Create/update gpg-agent.conf
+    Set-Content -Path "$gnupgDir\gpg-agent.conf" -Value "default-cache-ttl 86400$([System.Environment]::NewLine)max-cache-ttl 86400"
+
+    # Reload gpg-agent if gpgconf is available
+    try {
+      $gpgconf = Get-Command gpgconf -ErrorAction Stop
+      & $gpgconf.Source --reload gpg-agent
+    }
+    catch {
+      Show-Output "Warning: gpgconf not found, skipping gpg-agent reload"
+    }
+
+    Show-Output "Executing commands to alter git config..."
+    $gpg_program_source = $gpg_program.Source
+    git config --global gpg.program "$gpg_program_source"
+  }
+  catch {
+    Show-Output "Warning: GPG not found, skipping GPG configuration"
+  }
 
   git config --global pull.rebase true
 

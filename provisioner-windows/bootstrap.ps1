@@ -10,12 +10,8 @@
 $Account = "JonasPammer"
 $Repository = "JonasPammer"
 $Branch = "master"
-$ParentDestination = "$USERPROFILE\Documents\Programmieren"
+$ParentDestination = Join-Path ([Environment]::GetFolderPath("MyDocuments")) "Programmieren"
 $SubfolderToOpen = "provisioner-windows"
-
-
-### Init
-Push-Location
 
 
 ### Functions
@@ -41,14 +37,9 @@ function Test-CommandExists {
 
 # replica of function found in utils.ps1:
 function Update-PathEnvironmentVariable() {
-  if (Test-CommandExists "refreshenv") {
-    Show-Output "Refreshing PATH Environment Variable using 'refreshenv' function from chocolatey.."
-    refreshenv
-  }
-  else {
-    Show-Output "Refreshing PATH Environment Variable.."
-    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-  }
+  Show-Output "Refreshing PATH Environment Variable.."
+  $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+  if (Test-CommandExists "refreshenv") { try { refreshenv } catch { } }
 }
 
 # replica of function found in utils.ps1:
@@ -84,56 +75,35 @@ function Elevate {
 ### Main
 Elevate($MyInvocation.MyCommand.Definition)
 
-if (Test-CommandExists "choco") {
-  Show-Output "Chocolatey seems to be already installed."
-} else {
+if (!Test-CommandExists "choco") {
   # replica of "Install-Chocolatey" function found in utils.ps1:
-  Show-Output "Installing the Chocolatey package manager by downloading and running official install script"
   Set-ExecutionPolicy Bypass -Scope Process -Force
   [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
   Update-PathEnvironmentVariable
 }
 
-if (Test-CommandExists "git") {
-  Show-Output "Git seems to be already installed."
-} else {
-  Show-Output "Installing Git"
+if (!Test-CommandExists "git") {
   choco upgrade git -y
   Update-PathEnvironmentVariable
 }
 
-if (Test-Path "$ParentDestination") {
-  Show-Output "The parent folder seems to already exist."
-} else {
-  Show-Output "Creating parent folder."
-  mkdir $ParentDestination
-}
+New-Item -ItemType Directory -Path $ParentDestination -Force | Out-Null
 if (Test-Path "$ParentDestination\$Repository") {
-  Show-Output "The Repository seems to already exist."
   Set-Location "$ParentDestination\$Repository"
-  Show-Output "Checking out the correct Branch."
   git checkout $Branch
   Show-Output "Performing 'git pull' to update the scripts."
   git pull
 } else {
-  Show-Output "Cloning the Repository"
   Set-Location "$ParentDestination"
   git clone "https://github.com/$Account/$Repository"
   Set-Location "$ParentDestination\$Repository"
   Show-Output "Checking out the correct Branch."
   git checkout $Branch
 }
-
-
-Show-Output "Configuring the Repository directory to be safe."
 git config --global --add safe.directory "$ParentDestination\$Repository"
 
-# TODO or open Windows Terminal (if available) / Powershell Terminal here instead?
-Show-Output "Opening the scripts folder in File Explorer."
-explorer.exe "$ParentDestination\$Repository\$SubfolderToOpen"
-Show-Output "The setup is ready. You can close this window now."
-
-
-### End
-Pop-Location
+Set-ExecutionPolicy Bypass -Scope Process -Force
+Push-Location "$ParentDestination\$Repository\$SubfolderToOpen"
+Show-Output "You can now execute: \n\n \t./pc-setup.ps1"
+# if (Get-Command "wt" -ErrorAction SilentlyContinue) { Start-Process "wt" -ArgumentList "-d `"$ParentDestination\$Repository`"" } else { Start-Process (if (Get-Command "pwsh" -ErrorAction SilentlyContinue) { "pwsh" } else { "powershell" }) -ArgumentList "-NoExit", "-Command", "Set-Location '$ParentDestination\$Repository'" }

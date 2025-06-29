@@ -11,11 +11,7 @@ applications:
     winget_scope: machine
     description_short: de-facto Version Control System
     description_full: |
-      Favored Version Control System.
-
-      Associated tools in use:
-      https://cli.github.com/[Official GitHub command line utility (`gh`)],
-      https://git-lfs.com/[GitLFS]
+      I hate Subversion and VCS for not having .gitignore-equivalent or easy branching.
 
   - display_name: "Windows Terminal"
     link: https://github.com/microsoft/terminal
@@ -25,6 +21,8 @@ applications:
     winget_id: Microsoft.WindowsTerminal
     winget_scope: machine
     description_short: A modern, tabbed command line aggregator by Microsoft
+    description_full: |
+      Sickest Introduction Video
 
   - display_name: "Oh My POSH"
     link: https://github.com/jandedobbeleer/oh-my-posh
@@ -33,7 +31,7 @@ applications:
     provider: winget
     winget_id: JanDeDobbeleer.OhMyPosh
     winget_scope: machine
-    description_short: Prompt theme engine for any shell (Compareable to oh-my-zsh or bash-it)
+    description_short: Prompt theme engine (Compareable to oh-my-zsh or bash-it)
 
   - display_name: "GnuPG.Gpg4win"
     category: Programming
@@ -72,7 +70,7 @@ applications:
   - display_name: "Vagrant"
     link: "https://www.vagrantup.com/"
     category: Programming
-    status: normal
+    status: eh
     provider: winget
     winget_id: Hashicorp.Vagrant
     winget_scope: machine
@@ -92,7 +90,7 @@ applications:
   - display_name: "Hashicorp Packer"
     link: "https://github.com/hashicorp/packer"
     category: Programming
-    status: eh
+    status: not-used
     provider: chocolatey
     chocolatey_name: packer
     description_short: Used in combination with Terraform
@@ -100,23 +98,23 @@ applications:
   - display_name: "Hashicorp Vault"
     link: "https://github.com/hashicorp/vault"
     category: Programming
-    status: eh
+    uninstall: true # never really used (costs money?); replaced by 1Password
+    status: not-used
     provider: winget
     winget_id: Hashicorp.Vault
     winget_scope: machine
     chocolatey_name: vault
-    description_short: Infrastructure as Code
 
   - display_name: "Github CLI"
     category: Programming
-    status: normal
+    status: eh
     provider: chocolatey
     chocolatey_name: gh
     description_short: Used in combination with Terraform
 
   - display_name: "Github LFS"
     category: Programming
-    status: eh
+    status: eh # background
     provider: winget
     winget_id: GitHub.GitLFS
     winget_scope: machine
@@ -125,7 +123,7 @@ applications:
   - display_name: Windows Assessment and Deployment Kit
     link: https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install
     category: Computer Management Utilities
-    status: eh
+    status: not-used
     provider: winget
     winget_id: Microsoft.WindowsADK
     winget_scope: ~
@@ -154,7 +152,7 @@ applications:
     winget_scope: machine
     description_short: Inferior Version Control System
     description_full: |
-      Version Control System (VCS) used in one of my past companies
+      Version Control System (VCS) used in my first company
 
   - display_name: "SmartSVN"
     link: "https://www.smartsvn.com/"
@@ -169,7 +167,7 @@ applications:
   - display_name: "XAMPP"
     link: "https://www.apachefriends.org/"
     category: Programming
-    status: not-used
+    status: not-used # Dockerized Setups nowadays
     provider: winget
     winget_id: ApacheFriends.Xampp.8.2 # never tested
     winget_scope: machine # never tested
@@ -196,194 +194,14 @@ applications:
     category: Programming / Editors
     status: daily-driver
     provider: winget
-    winget_id: Microsoft.VisualStudioCode
+    winget_id: Microsoft.VisualStudioCode.Insiders
     winget_scope: machine
     description_short: "Modern Editor / IDE"
     description_full: |
       https://stackshare.io/JonasPammer/decisions/108521050744396979[
       image:https://img.shields.io/badge/View_Decision_on-stackshare-blue?logo=stackshare&logoColor=white[View Decision on StackShare]]
-
-      [[vscode-extensions]]
-      Extensions in use:
-
-      GUI::
-      * https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager[*Project Manager*]
-      * https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency[Project Manager for Java]
-      * https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens[*GitLens*]
-      * https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory[*Git History*]
-      * https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph[*Git Graph*]
-      * https://marketplace.visualstudio.com/items?itemName=johnstoncode.svn-scm[SVN]
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub[*GitHub Remote Repositories*]
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github[GitHub Pull Requests]
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions[Github Actions]
-      * https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow[GitLab Workflow]
-      * https://marketplace.visualstudio.com/items?itemName=humao.rest-client[REST Client]
-      * https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor[Resource Monitor]
-
-      Editor Theming::
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme[*GitHub VSCode Theme*]
-      * https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons[*vscode-icons*]
-      * https://marketplace.visualstudio.com/items?itemName=muuvmuuv.vscode-sundial[*Sundial*] -- Automatic night mode and settings switch
-
-      Language Support / IntelliSense Extensions::
-      * https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack[*Python Language Extension Pack*]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-python.python[Python]
-      ** https://marketplace.visualstudio.com/items?itemName=wholroyd.jinja[Jinja]
-      ** https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django[Django]
-      ** https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode[Visual Studio IntelliCode]
-      ** Python Environment Manager
-      ** https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring[*Python Docstring Generator*]
-      ** https://marketplace.visualstudio.com/items?itemName=wwm.better-align[Python Indent]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter[Jupyter]
-      * https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance[Pylance]
-      * https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack[*Java Language Extension Pack*]
-      ** https://marketplace.visualstudio.com/items?itemName=redhat.java[Language Support for Java by Red Hat]
-      ** https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug[Debugger for Java]
-      ** https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test[Test Runner for Java]
-      ** Project Manager for Java
-      ** https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven[Maven for Java]
-      * https://marketplace.visualstudio.com/items?itemName=redhat.ansible[Ansible language support by RedHat]
-      * https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml[YAML language support by RedHat]
-        -- also features built-in Kubernetes syntax support
-      * https://marketplace.visualstudio.com/items?itemName=samuelcolvin.jinjahtml[Better Jinja Syntax Highlighting]
-      * https://marketplace.visualstudio.com/items?itemName=joaompinto.vscode-graphviz[Graphviz language support]
-      * https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker[Docker]
-        (includes extension to GUI, which I don't use)
-      * https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp[_C#_]
-      * https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell[PowerShell]
-      * https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense[npm IntelliSense]
-      * https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense[Path IntelliSense]
-      * https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[Asciidoctor]
-
-      In-Editor::
-      * https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments[Better Comments]
-        -- Categorize Comments into alerts, queries, TODOs, Highlights and explicitily-Commented-Out-Code.
-      * https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles[Markdown Preview GitHub]
-      * https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost[Import Cost]
-        -- Display import/require package size in the editor
-      * https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer[Log Output Colorizer]
-      * https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer[SQLite Viewer]
-      * https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf[vscode-pdf]
-      * https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer[Excel Viewer]
-
-      Auto Formatting::
-      * https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig[EditorConfig]
-      * https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode[Prettier]
-      * https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format[shell-format]
-
-      Other::
-      * https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype[Paste JSON as code]
-          -- Copy JSON, paste as Go, TypeScript, C#, C++ and more.
-      * https://marketplace.visualstudio.com/items?itemName=icrawl.discord-vscode[Discord Presence]
-          -- Update your discord status with a rich presence.
-      * https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime[WakaTime]
-      * https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser[Open In Browser]
-      * https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack[Remote Development Extension pack]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers[*Remote - Containers*]
-          -- Open any folder or repository inside a Docker container and take advantage of Visual Studio Code's full feature set.
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh[Remote - SSH]
-          -- Open any folder on a remote machine using SSH and take advantage of VS Code's full feature set.
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit[Remote - SSH: Extension]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl[Remote - WSL]
-          -- Open any folder in the Windows Subsystem for Linux (WSL) and take advantage of Visual Studio Code's full feature set.
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories[Remote Repositories]
-          -- Remotely browse and edit git repositories
-
-      * https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-de[German Language Pack]
-      * https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings[IntelliJ Key Bindings]
-
-      https://stackshare.io/JonasPammer/decisions/108521050744396979[
-      image:https://img.shields.io/badge/View_Decision_on-stackshare-blue?logo=stackshare&logoColor=white[View Decision on StackShare]]
-
-      [[vscode-extensions]]
-      Extensions in use:
-
-      GUI::
-      * https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager[*Project Manager*]
-      * https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency[Project Manager for Java]
-      * https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens[*GitLens*]
-      * https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory[*Git History*]
-      * https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph[*Git Graph*]
-      * https://marketplace.visualstudio.com/items?itemName=johnstoncode.svn-scm[SVN]
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub[*GitHub Remote Repositories*]
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github[GitHub Pull Requests]
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions[Github Actions]
-      * https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow[GitLab Workflow]
-      * https://marketplace.visualstudio.com/items?itemName=humao.rest-client[REST Client]
-      * https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor[Resource Monitor]
-
-      Editor Theming::
-      * https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme[*GitHub VSCode Theme*]
-      * https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons[*vscode-icons*]
-      * https://marketplace.visualstudio.com/items?itemName=muuvmuuv.vscode-sundial[*Sundial*]
-        -- Automatic night mode and settings switch
-
-      Language Support / IntelliSense Extensions::
-      * https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack[*Python Language Extension Pack*]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-python.python[Python]
-      ** https://marketplace.visualstudio.com/items?itemName=wholroyd.jinja[Jinja]
-      ** https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django[Django]
-      ** https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode[Visual Studio IntelliCode]
-      ** Python Environment Manager
-      ** https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring[*Python Docstring Generator*]
-      ** https://marketplace.visualstudio.com/items?itemName=wwm.better-align[Python Indent]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter[Jupyter]
-      * https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance[Pylance]
-      * https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack[*Java Language Extension Pack*]
-      ** https://marketplace.visualstudio.com/items?itemName=redhat.java[Language Support for Java by Red Hat]
-      ** https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug[Debugger for Java]
-      ** https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test[Test Runner for Java]
-      ** Project Manager for Java
-      ** https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven[Maven for Java]
-      * https://marketplace.visualstudio.com/items?itemName=redhat.ansible[Ansible language support by RedHat]
-      * https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml[YAML language support by RedHat]
-        -- also features built-in Kubernetes syntax support
-      * https://marketplace.visualstudio.com/items?itemName=samuelcolvin.jinjahtml[Better Jinja Syntax Highlighting]
-      * https://marketplace.visualstudio.com/items?itemName=joaompinto.vscode-graphviz[Graphviz language support]
-      * https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker[Docker]
-        (includes extension to GUI, which I don't use)
-      * https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp[_C#_]
-      * https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell[PowerShell]
-      * https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense[npm IntelliSense]
-      * https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense[Path IntelliSense]
-      * https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[Asciidoctor]
-
-      In-Editor::
-      * https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments[Better Comments]
-        -- Categorize Comments into alerts, queries, TODOs, Highlights and explicitily-Commented-Out-Code.
-      * https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles[Markdown Preview GitHub]
-      * https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost[Import Cost]
-        -- Display import/require package size in the editor
-      * https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer[Log Output Colorizer]
-      * https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer[SQLite Viewer]
-      * https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf[vscode-pdf]
-      * https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer[Excel Viewer]
-
-      Auto Formatting::
-      * https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig[EditorConfig]
-      * https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode[Prettier]
-      * https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format[shell-format]
-
-      Other::
-      * https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype[Paste JSON as code]
-        -- Copy JSON, paste as Go, TypeScript, C#, C++ and more.
-      * https://marketplace.visualstudio.com/items?itemName=icrawl.discord-vscode[Discord Presence]
-        -- Update your discord status with a rich presence.
-      * https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime[WakaTime]
-      * https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser[Open In Browser]
-      * https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack[Remote Development Extension pack]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers[*Remote - Containers*]
-        -- Open any folder or repository inside a Docker container and take advantage of Visual Studio Code's full feature set.
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh[Remote - SSH]
-        -- Open any folder on a remote machine using SSH and take advantage of VS Code's full feature set.
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit[Remote - SSH: Extension]
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl[Remote - WSL]
-        -- Open any folder in the Windows Subsystem for Linux (WSL) and take advantage of Visual Studio Code's full feature set.
-      ** https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories[Remote Repositories]
-        -- Remotely browse and edit git repositories
-
-      * https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-de[German Language Pack]
-      * https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings[IntelliJ Key Bindings]
+      To be honest I just "@sort:installs" and install all Extensions that look like what I want. 
+      Given the same type of computer, I just log into GitHub (personal) or Microsoft (works also with work account), which syncs everything and installs Extensions.
 
   - display_name: "Jetbrains IntelliJ IDEA"
     link: "https://www.jetbrains.com/idea/"
@@ -397,7 +215,7 @@ applications:
 
   - display_name: "Jetbrains.Toolbox"
     category: Programming / Editors
-    status: eh
+    status: eh # one-off use for installing
     provider: winget
     winget_id: JetBrains.Toolbox
     winget_scope: ~
@@ -406,7 +224,7 @@ applications:
   - display_name: "Arduino IDE"
     link: "https://www.arduino.cc/"
     category: Programming / Editors
-    status: eh
+    status: not-used
     provider: winget
     winget_id: ArduinoSA.IDE.stable
     winget_scope: ~ # not tested
@@ -425,9 +243,7 @@ applications:
     category: Programming / Editors
     status: not-used
     description_full: |
-      C++ IDE
-      (Primarily used out of convinience to be able to completely
-      follow along with most C related Tutorials)
+      C++ IDE (Primarily used out of convinience, so I can follow along most C++ Tutorials)
 
   ### Programming / Programming Languages
   - display_name: "Java (JDK)"
@@ -465,6 +281,7 @@ applications:
   - display_name: "Python Anaconda3"
     link: "https://www.anaconda.com/download"
     category: Programming / Programming Languages
+    uninstall: true
     status: eh
     provider: chocolatey
     # install using winget fails midway
@@ -597,8 +414,7 @@ applications:
     winget_scope: machine
     description_short: Photo Tags Management
     description_full: |
-      light-weight (uses flat-file sqlite db for caching);
-      has Face Recognizition ability
+      Has Face Recognizition ability and advanced searching
 
   # Keep uninstallation of Greenshot above the installation of ShareX so that
   # ShareX has more success at registering the prntscr button
@@ -753,7 +569,8 @@ applications:
   - display_name: "RustDesk"
     link: "https://rustdesk.com/"
     category: Networking Tools
-    status: normal
+    uninstall: true # chose to use TeamViewer again needy
+    status: not-used
     provider: winget
     winget_id: RustDesk.RustDesk
     winget_scope: machine

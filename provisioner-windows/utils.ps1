@@ -161,14 +161,9 @@ function Update-PathEnvironmentVariable() {
       https://stackoverflow.com/a/31845512/13953427
   #>
   # https://stackoverflow.com/questions/17794507/reload-the-path-in-powershell#comment70758762_31845512
-  if (Test-CommandExists "refreshenv") {
-    Show-Output "Refreshing PATH Environment Variable using 'refreshenv' function from chocolatey.."
-    refreshenv
-  }
-  else {
-    Show-Output "Refreshing PATH Environment Variable.."
-    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-  }
+  Show-Output "Refreshing PATH Environment Variable.."
+  $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+  if (Test-CommandExists "refreshenv") { try { refreshenv } catch { } }
 }
 
 function Add-ToSystemPath([string]$ValueToAdd) {
