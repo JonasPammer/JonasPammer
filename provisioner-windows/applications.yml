@@ -296,7 +296,7 @@ applications:
     link: "https://github.com/coreybutler/nvm-windows"
     category: Programming / Programming Languages
     status: normal
-    provider: winget
+    # provider: winget
     winget_id: CoreyButler.NVMforWindows
     winget_scope: machine
     description_short: Node (NPM) Version Manager
@@ -334,6 +334,15 @@ applications:
       lorem ipsum
 
   ### General
+  - display_name: MEGAsync
+    link: "https://mega.nz/sync"
+    category: General
+    status: normal
+    provider: winget
+    winget_id: Mega.MEGAsync
+    winget_scope: machine
+    description_short: Naughty Storage
+
   - display_name: "OneDrive"
     link: "https://www.microsoft.com/de-de/microsoft-365/onedrive/download"
     category: General
@@ -405,13 +414,21 @@ applications:
     winget_scope: machine
     description_short: Free and Open Source Video Editor
 
+  - display_name: Davinci Resolve
+    link: "https://www.blackmagicdesign.com/at/event/davinciresolvedownload"
+    category: General
+    status: eh
+    description_short: Free Potent Video Editor
+    description_full: |
+      I use it for its time change feature.
+
   - display_name: "KDE Digikam"
     link: "https://www.digikam.org/"
     category: General
     status: daily-driver
     provider: winget
-    winget_id: KDE.digikam
-    winget_scope: machine
+    winget_id: KDE.digiKam
+    winget_scope: user
     description_short: Photo Tags Management
     description_full: |
       Has Face Recognizition ability and advanced searching
@@ -649,7 +666,7 @@ applications:
     link: "https://nmap.org/"
     category: Networking Tools
     status: normal
-    provider: winget
+    # provider: winget
     winget_id: Insecure.Nmap
     winget_scope: machine
     description_full: |
@@ -765,9 +782,19 @@ applications:
   - display_name: "WinDirStat"
     link: "https://windirstat.net/"
     category: Computer Management Utilities
-    status: normal
+    uninstall: true
+    status: not-used
     provider: winget
     winget_id: WinDirStat.WinDirStat
+    winget_scope: machine
+    description_short: Replaced by WizTree
+
+  - display_name: "WizTree"
+    link: "https://www.wiztree.com/"
+    category: Computer Management Utilities
+    status: normal
+    provider: winget
+    winget_id: AntibodySoftware.WizTree
     winget_scope: machine
     description_short: Disk Usage Statistics Viewer (treemap)
 
@@ -985,15 +1012,30 @@ applications:
   - display_name: "NVIDIA Geforce Experience"
     link: "https://www.nvidia.com/de-at/geforce/geforce-experience/"
     category: Gaming
-    status: normal
+    status: eh
     provider: chocolatey
     # winget always reinstalls
     # winget_id: Nvidia.GeForceExperience
     # winget_scope: machine
     chocolatey_name: geforce-experience
+
+  - display_name: "NVIDIA App"
+    link: "https://www.nvidia.com/de-at/software/nvidia-app/"
+    category: Gaming
+    status: normal
+    winget_scope: machine
     description_full: |
-      My main use-case is its Instant Replay functionality;
-      Also no longer need to worry about GPU driver installation and updates
+      New Version of Geforce Experience with improved Instant Replay;
+
+  # 3GB
+  - display_name: "NVIDIA CUDA Toolkit"
+    link: "https://developer.nvidia.com/cuda-downloads"
+    category: Gaming
+    status: eh
+    provider: winget
+    winget_id: Nvidia.CUDA
+    winget_scope: machine
+    description_full: Needed for Davinci Resolve
 
   ## Other
   - display_name: "Rufus"
@@ -1022,7 +1064,7 @@ applications:
     status: daily-driver
     provider: winget
     winget_id: M2Team.NanaZip
-    winget_scope: machine
+    winget_scope: user
     description_short: Modern Fork of 7-Zip
 
   ### Other (previously not mentioned in adoc)

@@ -9,12 +9,14 @@ wsl_install: false
 # https://raw.githubusercontent.com/microsoft/WSL/master/distributions/DistributionInfo.json
 wsl_distro: Ubuntu # 24.0.4
 
-setup_gpg: true
+# I use 1Password App SSH Signing, setup with one button on the 1Password Entry
+setup_gpg: false
 gpg_email: opensource@jonaspammer.at
 # may use "{{ gpg_email }}"" placeholder
 gpg_1password_item_name: "PGP/GnuGPG {{ gpg_email }}" # pragma: allowlist secret
 
-setup_ssh: true
+# I just export my SSH Key from 1Password to .ssh by clicking on the private key field of the entry
+setup_ssh: false
 ssh_name: "BOESER-DRACHE-3"
 # may use "{{ ssh_name }}"" placeholder
 ssh_1password_item_name: "SSH Key {{ ssh_name}}"

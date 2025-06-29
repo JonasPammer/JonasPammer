@@ -269,13 +269,13 @@ function Install-WSL() {
   Show-Output "Enabling WSL features"
   dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
   dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-  # no longer needed:
-  #.\wsl_update_x64.msi /quiet
-  # no longer exists, ""replaced"" by --enable-wsl1 as wsl2 is now default
-  #wsl --set-default-version 2
+  dism /online /enable-feature /featurename:HypervisorPlatform /all /norestart
 
   Show-Output "Installing WSL Distribution '$distribution'"
   wsl --install --distribution "$distribution"
+  if ($LASTEXITCODE -ne 0) {
+    Show-Output "WSL installation failed. A reboot may be required after enabling WSL features."
+  }
   Write-Host ""
 }
 
