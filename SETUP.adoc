@@ -6,18 +6,18 @@ https://short.jonaspammer.at/setup[_self-link_]
 image::home_setup.jpg[]
 
 PC (not pictured)::
-Got rid of Gaming Laptop - was a bad idea i will never recommend to anyone. Battery life is miserable and heat is a problem.
-My model had its chassis bent because of the battery right after warranty voided, causing me to spend 140€ for a replacement from official support (pictured above, black OLED RTX 3090 model. Initial one was a Mercury White RTX 2070). +
+// Got rid of Gaming Laptop - was a bad idea i will never recommend to anyone. +
+//Battery life is miserable and heat is a problem.
+//My model had its chassis bent because of the battery right after warranty voided, causing me to spend 140€ for a replacement from official support (pictured above, black OLED RTX 3090 model. Initial one was a Mercury White RTX 2070). +
 Now got a normal 1000€~ Tower PC again (32GB RAM, RTX 3070),
 inspired by https://www.hardwaredealz.com/bester-gaming-pc-fuer-unter-1000-euro-gamer-pc-bis-1000-euro[this config].
-__self-configured and bought as a tested- and built package (to avoid troubles) at https://www.dubaro.de__
 
 Samsung 34" Curved Monitor::
 no comment, really. just made a quick and in-need buy at local electronics shop
 
 Dell P2416Db Monitor (not pictured)::
 Got it cheap from work (Datacenter-Takeout).
-For Discord.
+For Discord and Music.
 // Also good for having "Them's Fighting Herds" (game a friend showed me) Keystrokes Cheatsheet opened ;)
 
 Roccat Vulcan Keyboard, German Layout::

@@ -1,8 +1,8 @@
 = Linters and Formatters
-Jonas Pammer <opensource@jonaspammer.at>;
 :toc:
 :source-highlighter: rouge
 
+From https://stackoverflow.blog/2020/07/20/linters-arent-in-your-way-theyre-on-your-side/["Linters are not in your way, they are on your side!"] by "Medi Madelen Gwosdz" on StackOverflow
 
 == Linters
 
@@ -84,9 +84,3 @@ For seniors, it is an easy way to enforce, not their style, but the use of a con
 The process of linting  can be time consuming when starting out a project; it requires the discipline to catch linter messages https://welchcanavan.com/why-i-lint-everything[from your first line of code]. It is, however, worth taking advantage of the ways to customize. Make use of best practices. Some companies publish their configuration settings. Like https://www.npmjs.com/package/eslint-config-airbnb[Airbnb’s .eslintrc]. Github not only published their linter config, but even open-sourced their https://www.zdnet.com/article/microsofts-github-now-open-source-developers-get-one-linter-to-rule-them-all/[unified version] of over 20 linters last month.
 
 *A linter is exactly like the spelling/grammar checker in your word processor. It’s there to advise you.*
-
-
-[[sources]]
-== Appendix: Sources
-
-* https://stackoverflow.blog/2020/07/20/linters-arent-in-your-way-theyre-on-your-side/["Linters are not in your way, they are on your side!"] by "Medi Madelen Gwosdz" on StackOverflow

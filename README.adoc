@@ -1,79 +1,62 @@
-:toc:
-:toc-placement!:
-= 👋 Hey there. My name's Jonas
+= 👋 Hey there. My name's Jonas https://www.linkedin.com/in/jonas-pammer-2b340a1aa[image:https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white[LinkedIn]] https://stackshare.io/JonasPammer/my-stack[image:https://img.shields.io/badge/stackshare-blue?logo=stackshare&logoColor=white[stackshare]]
+// https://tryhackme.com/p/PixelTutorials[image:https://img.shields.io/badge/TryHackMe-004daa?logo=tryhackme&logoColor=white[tryhackme]]
 
-https://www.linkedin.com/in/jonas-pammer-2b340a1aa[image:https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white[LinkedIn]]
-https://stackshare.io/JonasPammer/my-stack[image:https://img.shields.io/badge/stackshare-blue?logo=stackshare&logoColor=white[stackshare]]
-https://tryhackme.com/p/PixelTutorials[image:https://img.shields.io/badge/TryHackMe-004daa?logo=tryhackme&logoColor=white[tryhackme]]
+📍__**Location**__ EU, Austria, Vorarlberg (CET +1 hour)
 
 📺 Favourite Series::
 Avatar: The Last Airbender, Star Trek (VOY / TNG / PICARD / DISCOVERY)
 
 ⛳ Hobbies and Interests::
-Watching Movies with Friends, Learning new things, Programming, Keeping a clean and organized home and setup
+Furries, Watching Movies with Friends, Teaching, Programming, Keeping home setup organized
 
-🔝 Current Primary Fascinations::
-Ansible Automation and CI/CD (because its Awesome), Cooking (I spend too much € on other things ;))
 
-📍 Location::
-EU, Austria, Vorarlberg (CET +1 hour)
 
 [[it]]
 == IT (link:Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-orange?logo=diagrams.net&logoColor=black[Home Setup Diagram]])
 
-> __https://blog.nelhage.com/post/computers-can-be-understood/[*Computers are not magic and Software _can_ be understood*].__
+link:SETUP.adoc[🖼️ My Setup] - link:JOURNEY.adoc[🛝 My Journey]
 
-I know my way around Linux, Windows, IT, programming and generally like to always try to understand most of the things I stumble across every day.
+I know my way around IT, the full stack around programming and generally like to always try to understand most of the things I stumble across every day.
 
-// I like Software that does one thing very awesomely (not necesarrily one thing _only_ - i don't use Arch btw).
+== Writeups
 
-My current keen interest area is https://roadmap.sh/backend[Dev] - https://roadmap.sh/devops[Ops] --
-Specifically, in my current decision case, *IaaC* with Ansible/Terraform/Amazon Web Services and **C**ontinious Automated **I**ntegration/**D**elivery with GitHub Actions and Docker. +
-I will never get bored of my enthusiasm for web development, the browser, the backend and everything around it, as well as the perspectives that they still offer and make possible for us today.
+.👨‍💻 Take on DevOps and Unix-Epoch
 [%collapsible]
 ====
-These are very fascinating topics that are fundamentally changing the way software development and deployment is
-https://landscape.cncf.io/[done].
-Servers / VMs are transformed from sacred "don't touch" black box systems into simple disposable and on-demand createable goods.
-It is the pinnacle of automation and reproducibility.
+https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops] - the modern take on "Full Stack Developer" - is a very fascinating topic 
+that is fundamentally changing the way software development and deployment is https://landscape.cncf.io/[done].
+Servers and virtual machines are no longer seen as untouchable black boxes, but as implicitly documented, disposable on-demand creations.
+It's truly the pinnacle of automation and reproducibility!
 
 And the crazy thing is that **nothing has fundamentally changed** -
-It's just that the solutions (Linux, SSH, HTTP, TLS, ..) and concepts (TCP/IP, ..) that were created a long time ago by very smart people are so crazily thought-of princibles
-which we're all just slowly sticking together and extending continously. IT is amazing.
+It's just that The solutions like Linux, SSH, HTTP, TLS, TCP/IP, and more were created by brilliant minds long ago, and they're so ingeniously designed
+that we're still continue to stick them together in order to build the next big thing. IT is amazing.
 ====
 
-🌱 Having just completed an IT apprenticeship, I am currently studying for various certifications (CCNA, MSCA, FSNE 1-4, RHCSA, ...) to solidify my knowledge and help myself making the decision on which path to truly pursue by digging into each of them.
+link:demystifying/module_bundlers.adoc[Demystifying JavaScript Module Bundlers] 	-
+link:demystifying/transpilers.adoc[Demystifying JavaScript Transpilers]	-
+link:demystifying/linters_and_formatters.adoc[Demystifying Linters and Formatters]	-
+link:demystifying/conventional_commits.adoc[Demystifying Conventional Commits]	
 
-=== Recent Activities
+== Some Links
 
-🙋‍♂️ I https://github.com/JonasPammer?tab=stars[actively star repositories I find useful and interesting].
-Below is an automatically generated overview of my GitHub profile, showing mostly my recently starred projects (which may give somewhat of an indication of what I'm currently onto):
-
-image::./github-metrics.svg[Metrics]
-
-=== Private, Work and Infrastructure Setup
-
-include::SETUP.adoc[]
-
-== Demystifying
-
-Some Summarizations on various Topics I wrote to easily link to.
-Sources always linked.
-
-* link:demystifying/module_bundlers.adoc[Demystifying JavaScript Module Bundlers]
-* link:demystifying/transpilers.adoc[Demystifying JavaScript Transpilers]
-* link:demystifying/linters_and_formatters.adoc[Demystifying Linters and Formatters]
-* link:demystifying/asciidoctor.adoc[Demystifying Asciidoc / Asciidoctor]
-* link:demystifying/gitignore.adoc[Demystifying `.gitignore`]
-* link:demystifying/conventional_commits.adoc[Demystifying Conventional Commits]
-
-==== Some Links
-
+__https://blog.nelhage.com/post/computers-can-be-understood/[*Computers are not magic and Software _can_ be understood*].__ +
 http://www.catb.org/~esr/writings/taoup/html/ch01s06.html[conventions] +
 https://www.stilldrinking.org/programming-sucks[dream{sp}world]
 
-image:https://komarev.com/ghpvc/?username=JonasPammer&style=flat-square[image:https://hit.yhype.me/github/profile?user_id=32995541[.,title="Do not worry weary traveller - I am but a simple counter that can only track hits, not visitors. I am being proxied through GitHub to keep your identity safe."]
+== Recent Activities
+
+🔝 Current Primary Fascination::
+Fancy Library-Packed CookieCutter-Django with HTMX, Grails/Geb
+
+🙋‍♂️ I https://github.com/JonasPammer?tab=stars[actively star repositories I find useful and interesting]::
+Below is an automatically generated overview of my GitHub profile, showing mostly my recently starred projects (which may give somewhat of an indication of what I'm currently onto):
+
+image::./github-metrics.svg[Metrics]
+// https://komarev.com/ghpvc/?username=JonasPammer&style=flat-square
+image:https://hit.yhype.me/github/profile?user_id=32995541[.,title="Do not worry weary traveller - I am but a simple counter that can only track hits, not visitors. I am being proxied through GitHub to keep your identity safe."]
 
 // keep at bottom 😉
+[[pinned]]
 == Pinned Repositories / Recent Contributions
 // (see below)

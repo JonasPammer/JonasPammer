@@ -1,7 +1,8 @@
 = Transpilers
-Jonas Pammer <opensource@jonaspammer.at>;
 :toc:
 :source-highlighter: rouge
+
+From https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them["JavaScript Transpilers: What They Are & Why We Need Them"] by "Peleke Sengstacke"
 
 == Introduction
 Transpilers, or *source-to-source compilers*, are tools that read source code written in one programming language, and produce the equivalent code in another language
@@ -67,8 +68,3 @@ Loaders can, for example:
 * transform files from a different language like https://github.com/TypeStrong/ts-loader[TypeScript to JavaScript],
 * load inline images as data URLs,
 * https://webpack.js.org/loaders/css-loader[allow you to import CSS files directly from your JavaScript modules] (crazy, right?)
-
-[#sauce]
-== Appendix: Sources
-
-* https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them["JavaScript Transpilers: What They Are & Why We Need Them"] by "Peleke Sengstacke" (published on https://scotch.io[scotch.io])

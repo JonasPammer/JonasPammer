@@ -1,8 +1,12 @@
 = Module Bundlers
-Jonas Pammer <opensource@jonaspammer.at>;
 :toc:
 :source-highlighter: rouge
 
+From
+
+* https://lihautan.com/what-is-module-bundler-and-how-does-it-work/["What is module bundler and how does it work?"] by "Tan Li Hau"
+* https://lihautan.com/javascript-modules/["History of Web Development: JavaScript Modules"] by "Tan Li Hau"
+* https://lihautan.com/understand-the-frontend-tools/["Understanding Frontend Tools"] by "Tan Li Hau"
 
 == Introduction
 Module bundlers are tools frontend developers use to bundle https://lihautan.com/javascript-modules/[JavaScript modules] into a single JavaScript files that can be executed in the browser.
@@ -203,11 +207,3 @@ With "`require`" defined, starting the application would be just "require"ing th
 ** does not use function to wrap module
 ** order matters, require sorting based on dependency
 ** circular dependency may not work
-
-
-[[sources]]
-== Appendix: Sources
-
-* https://lihautan.com/what-is-module-bundler-and-how-does-it-work/["What is module bundler and how does it work?"] by "Tan Li Hau"
-* https://lihautan.com/javascript-modules/["History of Web Development: JavaScript Modules"] by "Tan Li Hau"
-* https://lihautan.com/understand-the-frontend-tools/["Understanding Frontend Tools"] by "Tan Li Hau"
