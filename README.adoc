@@ -14,7 +14,7 @@ Furries, Watching Movies with Friends, Teaching, Programming, Keeping home setup
 [[it]]
 == IT (link:Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-orange?logo=diagrams.net&logoColor=black[Home Setup Diagram]])
 
-link:SETUP.adoc[🖼️ My Setup] - link:JOURNEY.adoc[🛝 My Journey]
+link:SETUP.adoc[🖼️ My Setup]
 
 I know my way around IT, the full stack around programming and generally like to always try to understand most of the things I stumble across every day.
 
@@ -23,6 +23,8 @@ I know my way around IT, the full stack around programming and generally like to
 .👨‍💻 Take on DevOps and Unix-Epoch
 [%collapsible]
 ====
+link:JOURNEY.adoc[🛝 My Journey, for the Interested]
+
 https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops] - the modern take on "Full Stack Developer" - is a very fascinating topic 
 that is fundamentally changing the way software development and deployment is https://landscape.cncf.io/[done].
 Servers and virtual machines are no longer seen as untouchable black boxes, but as implicitly documented, disposable on-demand creations.
