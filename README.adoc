@@ -1,7 +1,8 @@
-= 👋 Hey there. My name's Jonas https://www.linkedin.com/in/jonas-pammer-2b340a1aa[image:https://img.shields.io/badge/LinkedIn-0077B5?style=social&logo=biolink[LinkedIn]] https://stackshare.io/JonasPammer/my-stack[image:https://img.shields.io/badge/stackshare-blue?style=social&logo=stackshare[stackshare]]
+= 👋 Hey there. My name's Jonas https://www.linkedin.com/in/jonas-pammer-2b340a1aa[image:https://img.shields.io/badge/LinkedIn-0077B5?style=social&logo=biolink[LinkedIn]]
 // https://tryhackme.com/p/PixelTutorials[image:https://img.shields.io/badge/TryHackMe-004daa?logo=tryhackme&logoColor=white[tryhackme]]
 
-link:Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-orange?style=for-the-badge&logo=diagrams.net&logoColor=black[Home Setup Diagram]] link:SETUP.adoc[image:https://img.shields.io/badge/PC%20Setup-lightblue?style=for-the-badge&logo=googlehome&logoSize=auto[PC Setup]]
+link:Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-orange?style=for-the-badge&logo=diagrams.net&logoColor=black[Home Setup Diagram]]
+link:SETUP.adoc[image:https://img.shields.io/badge/PC%20Setup-lightblue?style=for-the-badge&logo=googlehome&logoSize=auto[PC Setup]]
 
 // Already shown in GitHub Sidebar. If wanted, badge it:
 // image:https://img.shields.io/badge/Location-EU%2C%20Austria%2C%20Vorarlberg%20(CET%20%2B1%20hour)-blue?style=for-the-badge&logo=googlemaps&logoSize=auto[Static Badge]
@@ -13,7 +14,8 @@ Avatar: The Last Airbender, Star Trek (VOY / TNG / PICARD / DISCOVERY)
 ⛳ Hobbies and Interests::
 Furries, Watching Movies with Friends, Teaching, Programming, Keeping home setup organized
 
-I know my way around IT, the full stack around programming and generally like to always try to understand most of the things I stumble across every day.
+I know my way around IT, the full stack around programming https://stackshare.io/JonasPammer/my-stack[image:https://img.shields.io/badge/stackshare-blue?style=social&logo=stackshare[stackshare]] 
+and generally like to always try to understand most of the things I stumble across every day.
 
 == Writeups
 
