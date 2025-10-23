@@ -32,15 +32,24 @@ image:https://img.shields.io/badge/GitLab_CI-FC6D26?logo=gitlab&logoColor=white&
 image:https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white&style=for-the-badge[GitHub Actions]
 image:https://img.shields.io/badge/Ansible-EE0000?logo=ansible&logoColor=white&style=for-the-badge[Ansible]
 
+== Some Links
 
-== Writeups
+__https://blog.nelhage.com/post/computers-can-be-understood/[*Computers are not magic and Software _can_ be understood*].__ +
+http://www.catb.org/~esr/writings/taoup/html/ch01s06.html[conventions] +
+https://www.stilldrinking.org/programming-sucks[dream{sp}world]
+
+https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops]
+
+https://landscape.cncf.io/[Exhaustive Cloud and Tool Landscape]
+
+=== Some Yapping
 
 .👨‍💻 Take on DevOps and Unix-Epoch
 [%collapsible]
 ====
 link:JOURNEY.adoc[🛝 My Journey, for the Interested]
 
-https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops] - the modern take on "Full Stack Developer" - is a very fascinating topic
+DevOps - the modern take on "Full Stack Developer" - is a very fascinating topic
 that is fundamentally changing the way software development and deployment is https://landscape.cncf.io/[done].
 Servers and virtual machines are no longer seen as untouchable black boxes, but as implicitly documented, disposable on-demand creations.
 It's truly the pinnacle of automation and reproducibility!
@@ -50,16 +59,10 @@ It's just that The solutions like Linux, SSH, HTTP, TLS, TCP/IP, and more were c
 that we're still continue to stick them together in order to build the next big thing. IT is amazing.
 ====
 
-link:demystifying/module_bundlers.adoc[JavaScript Module Bundlers] 	-
-link:demystifying/transpilers.adoc[JavaScript Transpilers]	-
-link:demystifying/linters_and_formatters.adoc[Linters and Formatters]	-
-link:demystifying/conventional_commits.adoc[Conventional Commits]
-
-== Some Links
-
-__https://blog.nelhage.com/post/computers-can-be-understood/[*Computers are not magic and Software _can_ be understood*].__ +
-http://www.catb.org/~esr/writings/taoup/html/ch01s06.html[conventions] +
-https://www.stilldrinking.org/programming-sucks[dream{sp}world]
+// link:demystifying/module_bundlers.adoc[JavaScript Module Bundlers] 	-
+// link:demystifying/transpilers.adoc[JavaScript Transpilers]	-
+// link:demystifying/linters_and_formatters.adoc[Linters and Formatters]	-
+// link:demystifying/conventional_commits.adoc[Conventional Commits]
 
 == Recent Activities
 
