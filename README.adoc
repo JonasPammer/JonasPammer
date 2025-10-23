@@ -14,8 +14,24 @@ Avatar: The Last Airbender, Star Trek (VOY / TNG / PICARD / DISCOVERY)
 ⛳ Hobbies and Interests::
 Furries, Watching Movies with Friends, Teaching, Programming, Keeping home setup organized
 
-I know my way around IT, the full stack around programming https://stackshare.io/JonasPammer/my-stack[image:https://img.shields.io/badge/stackshare-blue?style=social&logo=stackshare[stackshare]] 
+I know my way around IT, the full stack around programming https://stackshare.io/JonasPammer/my-stack[image:https://img.shields.io/badge/stackshare-blue?style=social&logo=stackshare[stackshare]]
 and generally like to always try to understand most of the things I stumble across every day.
+
+// Mosted Used / About Me :)
+// Programming Languages
+image:https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge[Python]
+image:https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=for-the-badge[TypeScript]
+image:https://img.shields.io/badge/Java_Groovy-%23ED8B00.svg?logo=openjdk&logoColor=white&style=for-the-badge[Java]
+// Frameworks & Libraries
+image:https://img.shields.io/badge/Django_HTMX-092E20?logo=django&logoColor=white&style=for-the-badge[Django]
+image:https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=fff&style=for-the-badge[jQuery]
+image:https://img.shields.io/badge/Bootstrap5-7952B3?logo=bootstrap&logoColor=white&style=for-the-badge[Bootstrap]
+// DevOps & Tools
+image:https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white&style=for-the-badge[GitHub]
+image:https://img.shields.io/badge/GitLab_CI-FC6D26?logo=gitlab&logoColor=white&style=for-the-badge[GitLab CI]
+image:https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white&style=for-the-badge[GitHub Actions]
+image:https://img.shields.io/badge/Ansible-EE0000?logo=ansible&logoColor=white&style=for-the-badge[Ansible]
+
 
 == Writeups
 
@@ -24,7 +40,7 @@ and generally like to always try to understand most of the things I stumble acro
 ====
 link:JOURNEY.adoc[🛝 My Journey, for the Interested]
 
-https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops] - the modern take on "Full Stack Developer" - is a very fascinating topic 
+https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops] - the modern take on "Full Stack Developer" - is a very fascinating topic
 that is fundamentally changing the way software development and deployment is https://landscape.cncf.io/[done].
 Servers and virtual machines are no longer seen as untouchable black boxes, but as implicitly documented, disposable on-demand creations.
 It's truly the pinnacle of automation and reproducibility!
@@ -37,7 +53,7 @@ that we're still continue to stick them together in order to build the next big 
 link:demystifying/module_bundlers.adoc[JavaScript Module Bundlers] 	-
 link:demystifying/transpilers.adoc[JavaScript Transpilers]	-
 link:demystifying/linters_and_formatters.adoc[Linters and Formatters]	-
-link:demystifying/conventional_commits.adoc[Conventional Commits]	
+link:demystifying/conventional_commits.adoc[Conventional Commits]
 
 == Some Links
 
