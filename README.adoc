@@ -1,7 +1,7 @@
 = 👋 Hey there. My name's Jonas https://www.linkedin.com/in/jonas-pammer-2b340a1aa[image:https://img.shields.io/badge/LinkedIn-0077B5?style=social&logo=biolink[LinkedIn]]
 // https://tryhackme.com/p/PixelTutorials[image:https://img.shields.io/badge/TryHackMe-004daa?logo=tryhackme&logoColor=white[tryhackme]]
 
-link:Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-orange?style=for-the-badge&logo=diagrams.net&logoColor=black[Home Setup Diagram]]
+link:Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-df6c0c?style=for-the-badge&logo=diagrams.net&logoColor=black[Home Setup Diagram]]
 link:SETUP.adoc[image:https://img.shields.io/badge/PC%20Setup-lightblue?style=for-the-badge&logo=googlehome&logoSize=auto[PC Setup]]
 
 // Already shown in GitHub Sidebar. If wanted, badge it:
@@ -16,21 +16,6 @@ Furries, Watching Movies with Friends, Teaching, Programming, Keeping home setup
 
 I know my way around IT, the full stack around programming https://stackshare.io/JonasPammer/my-stack[image:https://img.shields.io/badge/stackshare-blue?style=social&logo=stackshare[stackshare]]
 and generally like to always try to understand most of the things I stumble across every day.
-
-// Mosted Used / About Me :)
-// Programming Languages
-image:https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge[Python]
-image:https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=for-the-badge[TypeScript]
-image:https://img.shields.io/badge/Java_Groovy-%23ED8B00.svg?logo=openjdk&logoColor=white&style=for-the-badge[Java]
-// Frameworks & Libraries
-image:https://img.shields.io/badge/Django_HTMX-092E20?logo=django&logoColor=white&style=for-the-badge[Django]
-image:https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=fff&style=for-the-badge[jQuery]
-image:https://img.shields.io/badge/Bootstrap5-7952B3?logo=bootstrap&logoColor=white&style=for-the-badge[Bootstrap]
-// DevOps & Tools
-image:https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white&style=for-the-badge[GitHub]
-image:https://img.shields.io/badge/GitLab_CI-FC6D26?logo=gitlab&logoColor=white&style=for-the-badge[GitLab CI]
-image:https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white&style=for-the-badge[GitHub Actions]
-image:https://img.shields.io/badge/Ansible-EE0000?logo=ansible&logoColor=white&style=for-the-badge[Ansible]
 
 == Some Links
 
@@ -68,6 +53,20 @@ that we're still continue to stick them together in order to build the next big 
 
 🔝 Current Primary Fascination::
 Fancy Library-Packed CookieCutter-Django with HTMX, Grails/Geb
+
+// Programming Languages
+image:https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge[Python]
+image:https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=for-the-badge[TypeScript]
+image:https://img.shields.io/badge/Groovy_Java-%23619DBD.svg?logo=openjdk&logoColor=white&style=for-the-badge[Java]
+// Frameworks & Libraries
+image:https://img.shields.io/badge/Django_HTMX-092E20?logo=django&logoColor=white&style=for-the-badge[Django]
+image:https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=fff&style=for-the-badge[jQuery]
+image:https://img.shields.io/badge/Bootstrap_5-7952B3?logo=bootstrap&logoColor=white&style=for-the-badge[Bootstrap]
+// DevOps & Tools
+image:https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white&style=for-the-badge[GitHub]
+image:https://img.shields.io/badge/GitLab_CI-df6c0c?logo=gitlab&logoColor=white&style=for-the-badge[GitLab CI]
+image:https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white&style=for-the-badge[GitHub Actions]
+image:https://img.shields.io/badge/Ansible-black?logo=ansible&logoColor=white&style=for-the-badge[Ansible]
 
 🙋‍♂️ I https://github.com/JonasPammer?tab=stars[actively star repositories I find useful and interesting]::
 Below is an automatically generated overview of my GitHub profile, showing mostly my recently starred projects (which may give somewhat of an indication of what I'm currently onto):
