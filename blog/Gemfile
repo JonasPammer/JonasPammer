@@ -1,0 +1,6 @@
+# Gemfile for Hugo + AsciiDoc blog dependencies
+source 'https://rubygems.org'
+
+gem 'rouge'
+gem 'asciidoctor'
+gem 'asciidoctor-kroki'

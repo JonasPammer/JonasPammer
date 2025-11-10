@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__sequentialthinking__sequentialthinking",
+      "mcp__playwright",
+      "mcp__context7",
+      "WebSearch",
+      "WebFetch(domain:docs.antora.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:blog.tangly.net)",
+      "WebFetch(domain:hugocodex.org)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:gohugo.io)",
+      "WebFetch(domain:photoswipe.com)",
+      "WebFetch(domain:lokeshdhakar.com)",
+      "WebFetch(domain:www.unpkg.com)",
+      "WebFetch(domain:app.unpkg.com)",
+      "WebFetch(domain:blog.codepen.io)",
+      "WebFetch(domain:codepen.io)",
+      "Bash(git:*)",
+      "Bash(bundle:*)",
+      "Bash(hugo:*)",
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(docker-compose:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(timeout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,42 @@
+{{/* Source: https://github.com/jhvanderschee/hugocodex/blob/main/layouts/_partials/image-gallery.html */}}
+{{/* Modified to work with page bundle images and PhotoSwipe v5 */}}
+
+<style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery .pswp-gallery__item {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+.image-gallery .pswp-gallery__item a {text-align: center; text-decoration: none!important; color: #777; display: block;}
+.image-gallery .pswp-gallery__item a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery .pswp-gallery__item a img {width: 100%; display: block; height: auto;}
+</style>
+
+{{ $dir := string (.Get "gallery_dir") }}
+<div class="pswp-gallery image-gallery">
+{{- if eq $dir "." -}}
+  {{/* For page bundle images */}}
+  {{ range (.Page.Resources.ByType "image") }}
+    {{- $imagetitle := index (split .Name ".") 0 -}}
+    <div class="pswp-gallery__item">
+      <a href="{{ .Permalink }}"
+         data-pswp-width="{{ .Width }}"
+         data-pswp-height="{{ .Height }}">
+        <img src="{{ .Permalink }}" alt="{{ $imagetitle }}">
+        <span>{{ $imagetitle }}</span>
+      </a>
+      <div class="pswp-caption-content">{{ $imagetitle }}</div>
+    </div>
+  {{ end }}
+{{- else -}}
+  {{/* For static directory images - dimensions auto-detected by PhotoSwipe */}}
+  {{ range (readDir (print "static" $dir)) }}
+    {{- $imageurl := printf "%s/%s" $dir .Name -}}
+    {{- $imagetitle := index (split .Name ".") 0 -}}
+    <div class="pswp-gallery__item">
+      <a href="{{ $imageurl }}">
+        <img src="{{ $imageurl }}" alt="{{ $imagetitle }}">
+        <span>{{ $imagetitle }}</span>
+      </a>
+      <div class="pswp-caption-content">{{ $imagetitle }}</div>
+    </div>
+  {{ end }}
+{{- end -}}
+</div>

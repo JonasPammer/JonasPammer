@@ -1,0 +1,5 @@
+{{- /* Source: Override of blog/themes/PaperMod/layouts/partials/comments.html */ -}}
+{{- /* Integrates our custom Giscus comments partial into PaperMod's comments extension point */ -}}
+{{- if (.Param "comments") -}}
+{{- partial "giscus.html" . -}}
+{{- end -}}

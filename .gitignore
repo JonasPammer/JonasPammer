@@ -1,3 +1,4 @@
+.playwright-mcp
 .$Diagram.drawio.png.bkp
 
 # Created by https://www.toptal.com/developers/gitignore/api/linux,python,windows,virtualenv,jetbrains+all,visualstudiocode
@@ -336,3 +337,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,python,windows,virtualenv,jetbrains+all,visualstudiocode
+

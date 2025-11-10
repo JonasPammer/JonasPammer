@@ -1,0 +1,33 @@
+{{- if eq .Type "posts" -}}
+<section id="giscus" class="giscus-section">
+  <script src="https://giscus.app/client.js"
+    data-repo="JonasPammer/JonasPammer"
+    data-repo-id="R_kgDOGtxkyg"
+    data-category="Q&A"
+    data-category-id="DIC_kwDOGtxkys4Cxk_t"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="1"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</section>
+{{- end -}}
+
+<style>
+.giscus-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Ensure giscus respects dark mode */
+.giscus {
+  color-scheme: light dark;
+}
+</style>

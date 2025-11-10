@@ -1,0 +1,102 @@
+/* Source: https://raw.githubusercontent.com/asciidoctor/asciidoctor-docs-ui/24dda615b94cab695d736a62ffff1bd43a6a2d81/src/css/doc.css */
+/* License: MPL-2.0 (https://github.com/asciidoctor/asciidoctor-docs-ui/blob/main/LICENSE) */
+/* Extracted: source-toolbox and copy-button styles, adapted for Hugo without .doc wrapper */
+
+.listingblock > .content {
+  position: relative;
+}
+
+.source-toolbox {
+  display: flex;
+  visibility: hidden;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  color: var(--pre-annotation-font-color, #666);
+  font-family: var(--body-font-family, inherit);
+  font-size: calc(13 / 16 * 1rem);
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.listingblock:hover .source-toolbox {
+  visibility: visible;
+}
+
+.source-toolbox .source-lang {
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+}
+
+.source-toolbox > :not(:last-child)::after {
+  content: "|";
+  letter-spacing: 0;
+  padding: 0 1ch;
+}
+
+.source-toolbox .copy-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  color: inherit;
+  outline: none;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+
+.source-toolbox .copy-icon {
+  flex: none;
+  width: inherit;
+  height: inherit;
+}
+
+.source-toolbox img.copy-icon {
+  filter: var(--pre-annotation-icon-filter);
+}
+
+.source-toolbox svg.copy-icon {
+  fill: currentColor;
+}
+
+.source-toolbox .copy-toast {
+  flex: none;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 1em;
+  background-color: var(--doc-font-color, #333);
+  border-radius: 0.25em;
+  padding: 0.5em;
+  color: var(--color-white, #fff);
+  cursor: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.5s;
+}
+
+.source-toolbox .copy-toast::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 0.55em solid transparent;
+  border-left-color: var(--doc-font-color, #333);
+  transform: rotate(-90deg) translateX(50%) translateY(50%);
+  transform-origin: left;
+}
+
+.source-toolbox .copy-button.clicked .copy-toast {
+  opacity: 1;
+  transition: none;
+}
+
+.language-console .hljs-meta {
+  user-select: none;
+}
