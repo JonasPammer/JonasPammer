@@ -68,7 +68,7 @@ imagesdir = "/blog/diagrams"
 kroki-server-url = "http://localhost:8000"
 kroki-fetch-diagram = true
 # Table of contents
-toc = "auto" 
+toc = "auto"
 toclevels = 3 # default 2
 # Allow URLs in include directives (https://docs.asciidoctor.org/asciidoc/latest/directives/include-uri/)
 allow-uri-read = true

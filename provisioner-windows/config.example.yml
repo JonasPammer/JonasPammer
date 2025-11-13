@@ -19,4 +19,4 @@ gpg_1password_item_name: "PGP/GnuGPG {{ gpg_email }}" # pragma: allowlist secret
 setup_ssh: false
 ssh_name: "BOESER-DRACHE-3"
 # may use "{{ ssh_name }}"" placeholder
-ssh_1password_item_name: "SSH Key {{ ssh_name}}"
+ssh_1password_item_name: "SSH Key {{ ssh_name}}"  # pragma: allowlist secret

@@ -116,7 +116,7 @@ Self-contained AsciiDoc articles explaining complex topics:
 **Key Features:**
 - Client-Side search
 - Giscus comments (GitHub Discussions)
-- Syntax highlighting (light/dark) 
+- Syntax highlighting (light/dark)
 - Copy-to-clipboard buttons on code blocks (hover to reveal)
 - PWA support
 - Reading time estimates

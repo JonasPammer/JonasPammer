@@ -200,8 +200,9 @@ applications:
     description_full: |
       https://stackshare.io/JonasPammer/decisions/108521050744396979[
       image:https://img.shields.io/badge/View_Decision_on-stackshare-blue?logo=stackshare&logoColor=white[View Decision on StackShare]]
-      To be honest I just "@sort:installs" and install all Extensions that look like what I want. 
-      Given the same type of computer, I just log into GitHub (personal) or Microsoft (works also with work account), which syncs everything and installs Extensions.
+      To be honest I just "@sort:installs" and install all Extensions that look like what I want.
+      Given the same type of computer, I just log into GitHub (personal) or Microsoft (works also with work account),
+      which syncs everything and installs Extensions.
 
   - display_name: "Jetbrains IntelliJ IDEA"
     link: "https://www.jetbrains.com/idea/"

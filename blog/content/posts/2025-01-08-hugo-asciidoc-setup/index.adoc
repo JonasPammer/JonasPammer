@@ -45,7 +45,7 @@ AsciiDoc automatically replaces certain character sequences: (C) (R) (TM) -- ...
 
 [cols="a,90%a"]
 |===
-| Unordered list 
+| Unordered list
 |
 * First level item
 * Another first level item
@@ -157,8 +157,8 @@ jobs:
 [source,bash,role="nocopy"]
 ----
 # Configuration with sensitive data
-export API_KEY="your-secret-api-key-here"
-export DATABASE_URL="postgresql://user:password@localhost/db"
+export API_KEY="your-secret-api-key-here"  # pragma: allowlist secret
+export DATABASE_URL="postgresql://user:password@localhost/db"  # pragma: allowlist secret
 ----
 
 TIP: Add `role="nocopy"` to a code block to disable the copy button for blocks containing placeholders or sensitive examples.

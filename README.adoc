@@ -14,7 +14,7 @@ Avatar: The Last Airbender, Star Trek (VOY / TNG / PICARD / DISCOVERY)
 ⛳ Hobbies and Interests::
 Furry Community, Watching Movies with Friends, Teaching, Programming, Keeping home setup organized
 
-I know my way around https://www.linkedin.com/in/jonas-pammer-2b340a1aa[IT ^image:https://img.shields.io/badge/LinkedIn-darkblue?style=social&logo=biolink[LinkedIn]^], 
+I know my way around https://www.linkedin.com/in/jonas-pammer-2b340a1aa[IT ^image:https://img.shields.io/badge/LinkedIn-darkblue?style=social&logo=biolink[LinkedIn]^],
 the https://stackshare.io/JonasPammer/my-stack[full stack around programming ^image:https://img.shields.io/badge/stackshare-lightblue?logo=stackshare[stackshare]^]
 and generally like to always try to understand most of the things I stumble across every day.
 

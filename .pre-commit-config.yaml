@@ -18,6 +18,7 @@ repos:
         exclude: |
           (?x)^(
               .cruft.json|
+              blog/layouts/partials/extend_head\.html
           )$
 
   - repo: https://github.com/adrienverge/yamllint
