@@ -94,7 +94,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/blog/"
+            --baseURL "https://blog.jonaspammer.at/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
