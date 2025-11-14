@@ -1,4 +1,4 @@
-baseURL = "https://jonaspammer.github.io/blog/"
+baseURL = "https://blog.jonaspammer.at/"
 languageCode = "en-us"
 title = "Jonas Pammer's Blog"
 theme = "PaperMod"
@@ -63,7 +63,7 @@ icons = "font"
 # Diagrams
 experimental = true
 imagesoutdir = "static/diagrams"
-imagesdir = "/blog/diagrams"
+imagesdir = "/diagrams"
 # Kroki server for all diagram types - downloads and embeds diagrams at build time
 kroki-server-url = "http://localhost:8000"
 kroki-fetch-diagram = true
