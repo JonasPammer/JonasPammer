@@ -58,13 +58,14 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true  # Automatically installs gems from Gemfile and caches them
+          bundler-cache: false  # Disable automatic bundler caching
           working-directory: ./blog
-          cache-version: 1  # Force cache refresh if needed
-        env:
-          # Disable deployment mode - install gems to system location where Hugo can find them
-          BUNDLE_DEPLOYMENT: 'false'
-          BUNDLE_PATH: ''
+
+      - name: Install Ruby gems
+        run: |
+          bundle config set --local deployment 'false'
+          bundle config set --local path ''
+          bundle install --jobs 4 --retry 3
 
       - name: Cache Hugo modules
         uses: actions/cache@v4
@@ -91,7 +92,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          bundle exec hugo \
+          hugo \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/blog/"
