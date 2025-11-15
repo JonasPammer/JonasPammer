@@ -10,10 +10,4 @@ I know my way around https://www.linkedin.com/in/jonas-pammer-2b340a1aa[IT], the
 
 == This Blog
 
-Technical notes and experiments with software engineering, DevOps, infrastructure automation, and CI/CD workflows. Built with Hugo + AsciiDoc, powered by GitHub Pages.
-
-== Links
-
-- GitHub: https://github.com/JonasPammer[github.com/JonasPammer]
-- LinkedIn: https://linkedin.com/in/jonaspammer[linkedin.com/in/jonaspammer]
-- Home Setup: link:/Diagram.drawio.png[Diagram]
+Technical notes and experiments too precious for simple gists or aside mentions in github profile.

@@ -42,6 +42,14 @@ url = "https://github.com/JonasPammer"
 name = "linkedin"
 url = "https://linkedin.com/in/jonaspammer"
 
+[[params.socialIcons]]
+name = "drawio"
+url = "https://github.com/JonasPammer/JonasPammer/blob/master/Diagram.drawio.png"
+
+[[params.socialIcons]]
+name = "stackshare"
+url = "https://stackshare.io/JonasPammer/my-stack"
+
 # https://gohugo.io/configuration/markup/#asciidoc
 # Tip: Run hugo --logLevel debug to examine Hugo’s call to the Asciidoctor executable
 [markup]
