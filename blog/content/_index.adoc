@@ -1,13 +1,18 @@
-= About
-:page-date: 2025-01-08
-:page-lastmod: 2025-01-08
 
-I know my way around https://www.linkedin.com/in/jonas-pammer-2b340a1aa[IT], the https://stackshare.io/JonasPammer/my-stack[full stack around programming], and generally like to always try to understand most of the things I stumble across every day.
+== https://github.com/JonasPammer[image:https://avatars.githubusercontent.com/u/32995541?v=4[github.com/JonasPammer,200]] 👋 Hey there. Welcome to my Blog.
 
-📺 Favourite Series: Avatar: The Last Airbender, Star Trek (VOY / TNG / PICARD / DISCOVERY)
+// COPY FROM READEM.adoc
 
-⛳ Hobbies: Furry Community, Watching Movies with Friends, Teaching, Programming, Keeping home setup organized
+link:https://github.com/JonasPammer/JonasPammer/blob/master/Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-df6c0c?style=for-the-badge&logo=diagrams.net&logoColor=black[Home Setup Diagram]]
 
-== This Blog
+== Some Links
 
-Technical notes and experiments too precious for simple gists or aside mentions in github profile.
+__https://blog.nelhage.com/post/computers-can-be-understood/[*Computers are not magic and Software _can_ be understood*].__ +
+http://www.catb.org/~esr/writings/taoup/html/ch01s06.html[conventions] +
+https://www.stilldrinking.org/programming-sucks[dream{sp}world]
+
+https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops]
+
+https://landscape.cncf.io/[Exhaustive Cloud and Tool Landscape]
+
+== Posts

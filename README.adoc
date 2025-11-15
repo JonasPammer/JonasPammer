@@ -18,38 +18,20 @@ I know my way around https://www.linkedin.com/in/jonas-pammer-2b340a1aa[IT ^imag
 the https://stackshare.io/JonasPammer/my-stack[full stack around programming ^image:https://img.shields.io/badge/stackshare-lightblue?logo=stackshare[stackshare]^]
 and generally like to always try to understand most of the things I stumble across every day.
 
-== Some Links
+// .👨‍💻 Some Yapping about DevOps and Unix-Epoch
+// [%collapsible]
+// ====
+// link:JOURNEY.adoc[🛝 My Journey, for the Interested]
 
-__https://blog.nelhage.com/post/computers-can-be-understood/[*Computers are not magic and Software _can_ be understood*].__ +
-http://www.catb.org/~esr/writings/taoup/html/ch01s06.html[conventions] +
-https://www.stilldrinking.org/programming-sucks[dream{sp}world]
+// DevOps - the modern take on "Full Stack Developer" - is a very fascinating topic
+// that is fundamentally changing the way software development and deployment is https://landscape.cncf.io/[done].
+// Servers and virtual machines are no longer seen as untouchable black boxes, but as implicitly documented, disposable on-demand creations.
+// It's truly the pinnacle of automation and reproducibility!
 
-https://roadmap.sh/backend[Dev] https://roadmap.sh/infrastructure[Ops]
-
-https://landscape.cncf.io/[Exhaustive Cloud and Tool Landscape]
-
-== Recent Activities
-
-=== 📓 My Thoughts (Blog)
-
-// Also, will probably be interesting to check out giant landscape out GitHub-Only SSG Solution
-// _Thoughts Shared for the Internet To Come_
-...
-
-.👨‍💻 Some Yapping about DevOps and Unix-Epoch
-[%collapsible]
-====
-link:JOURNEY.adoc[🛝 My Journey, for the Interested]
-
-DevOps - the modern take on "Full Stack Developer" - is a very fascinating topic
-that is fundamentally changing the way software development and deployment is https://landscape.cncf.io/[done].
-Servers and virtual machines are no longer seen as untouchable black boxes, but as implicitly documented, disposable on-demand creations.
-It's truly the pinnacle of automation and reproducibility!
-
-And the crazy thing is that **nothing has fundamentally changed** -
-It's just that The solutions like Linux, SSH, HTTP, TLS, TCP/IP, and more were created by brilliant minds long ago, and they're so ingeniously designed
-that we're still continue to stick them together in order to build the next big thing. IT is amazing.
-====
+// And the crazy thing is that **nothing has fundamentally changed** -
+// It's just that The solutions like Linux, SSH, HTTP, TLS, TCP/IP, and more were created by brilliant minds long ago, and they're so ingeniously designed
+// that we're still continue to stick them together in order to build the next big thing. IT is amazing.
+// ====
 
 // link:demystifying/module_bundlers.adoc[JavaScript Module Bundlers] 	-
 // link:demystifying/transpilers.adoc[JavaScript Transpilers]	-
@@ -57,7 +39,7 @@ that we're still continue to stick them together in order to build the next big 
 // link:demystifying/conventional_commits.adoc[Conventional Commits]
 
 
-=== 🔝 Current Primary Fascination::
+== 🔝 Current Primary Fascination::
 Fancy Library-Packed CookieCutter-Django with HTMX, Grails/Geb
 
 // Programming Languages
