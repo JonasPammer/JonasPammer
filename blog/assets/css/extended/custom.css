@@ -1,0 +1,18 @@
+.pswp__dynamic-caption {
+  text-align: center !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  padding: 12px 20px !important;
+  color: #fff !important;
+  border-radius: 4px;
+  max-width: 100% !important;
+}
+.pswp__dynamic-caption--below {
+  width: 100% !important;
+  left: 0 !important;
+  margin: 0 !important;
+}
+
+/* remove huge empty space above and below role=profile image when params.profileMode is disabled (_index.adoc) */
+.main .profile {
+    min-height: 0;
+}

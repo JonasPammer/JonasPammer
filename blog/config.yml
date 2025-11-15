@@ -26,24 +26,28 @@ security:
 outputs:
   home:
     - HTML
+    - RSS
+    - JSON # necessary for search
   section:
     - HTML
 
+# Blog metadata
 params:
-  # Blog metadata
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: Technical blog about software engineering, DevOps, and infrastructure
   author: Jonas Pammer
+
   defaultTheme: auto  # auto, light, dark
-  showToc: true # PaperMod
-  tocSide: right # PaperModX
-  TocOpen: false # PaperMod
 
   # PaperMod Feature toggles
+  showToc: true
+  tocSide: right # PaperModX
+  TocOpen: false
   ShowShareButtons: false
   ShowReadingTime: true
   disableSpecial1stPost: true
   # displayFullLangName: true
-  # ShowPostNavLinks: true # pagination disabled
+  ShowPostNavLinks: true # previous / next suggestion
   # ShowBreadCrumbs: true
   ShowCodeCopyButtons: false # own copy script, copied from asciidoctor
   ShowRssButtonInSectionTermList: false # i don't use RSS
@@ -55,6 +59,7 @@ params:
   profileMode:
     enabled: false
     title: 👋 Hey there. Welcome to my Blog.
+    # subtitle:
     imageUrl: "https://avatars.githubusercontent.com/u/32995541?v=4"
     imageTitle: github.com/JonasPammer
     # imageWidth: 120
@@ -94,6 +99,7 @@ params:
   #     hiddenInList: true # hide on list pages and home
   #     hiddenInSingle: true # hide on single page
 
+  # https://www.fusejs.io/api/options.html
   # fuseOpts:
   #     isCaseSensitive: false
   #     shouldSort: true
@@ -102,6 +108,10 @@ params:
   #     threshold: 0.4
   #     minMatchCharLength: 0
   #     keys: ["title", "permalink", "summary", "content"]
+
+  footer:
+    hideCopyright: true
+    text: ""
   
 # https://gohugo.io/configuration/markup/#asciidoc
 # Tip: Run hugo --logLevel debug to examine Hugo's call to the Asciidoctor executable

@@ -92,9 +92,7 @@ jobs:
           HUGO_ENV: production
         run: |
           hugo \
-            --gc \
-            --minify \
-            --baseURL "https://blog.jonaspammer.at/"
+            --gc
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

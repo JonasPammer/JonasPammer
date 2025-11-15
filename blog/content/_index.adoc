@@ -1,8 +1,10 @@
+// Using role=profile for round image. Also gets centered.
+== https://github.com/JonasPammer[image:https://avatars.githubusercontent.com/u/32995541?v=4[github.com/JonasPammer,200,role="profile"]] 👋 Hey there. Welcome to my Blog.
 
-== https://github.com/JonasPammer[image:https://avatars.githubusercontent.com/u/32995541?v=4[github.com/JonasPammer,200]] 👋 Hey there. Welcome to my Blog.
+// ⛳  Interests::
+// Furries, Teaching, Programming, Keeping home setup organized
 
-// COPY FROM READEM.adoc
-
+// COPY FROM README.adoc
 link:https://github.com/JonasPammer/JonasPammer/blob/master/Diagram.drawio.png[image:https://img.shields.io/badge/Home%20Setup%20Diagram-df6c0c?style=for-the-badge&logo=diagrams.net&logoColor=black[Home Setup Diagram]]
 
 == Some Links

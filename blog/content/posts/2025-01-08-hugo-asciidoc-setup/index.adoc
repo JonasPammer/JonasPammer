@@ -1,15 +1,36 @@
-+++
-title = "AsciiDoc Feature Showcase"
-date = 2025-01-08
-lastmod = 2025-01-08
-tags = ["hugo", "asciidoc", "demo", "ai-generated"]
-description = "Comprehensive demonstration of AsciiDoc features for theme comparison"
-+++
+---
+title: "Example Post"
+date: 2025-01-08
+lastmod: 2025-01-08
+tags: ["hugo", "asciidoc", "demo", "ai-generated"]
+description: "Comprehensive demonstration of AsciiDoc features for theme comparison"
+
+#// https://github.com/adityatelange/hugo-PaperMod/wiki/Variables#page-variables
+#showToc: true
+TocOpen: true
+draft: true
+# hidemeta: false
+comments: false
+#canonicalURL: "https://canonical.url/to/page"
+# disableShare: false
+# hideSummary: false
+searchHidden: true
+# ShowReadingTime: true
+ShowBreadCrumbs: true
+# ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+# UseHugoToc: true
+cover:
+    image: "https://media.licdn.com/dms/image/v2/C4E16AQHf3sgjB0bzdg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1652360055872?e=2147483647&v=beta&t=jRbONS3ebW-1ZbLUuOmkNdHbjR1fGCdM07wCEibiksA" # image path/url
+    # alt: "<alt text>" # alt text
+    # caption: "<text>" # display caption under cover
+    # relative: false # when using page bundles set this to true
+    # hidden: true # only hide on current single page
+---
 
 :project-name: Hugo + AsciiDoc Blog
 :version: 1.0.0
-
-== Introduction
 
 AI-Generated Post showcasing all of Asciidoctor's Features, to help me decide which theme I want.
 
@@ -368,7 +389,7 @@ image::https://picsum.photos/1200/600?random=2[Mountain landscape,1200,600]
 
 == Hugo Shortcodes
 
-=== YouTube Embed (Privacy-Friendly)
+=== YouTube Embed
 
 {{< youtube qtIqKaDlqXo >}}
 
