@@ -112,7 +112,7 @@ params:
   footer:
     hideCopyright: true
     text: ""
-  
+
 # https://gohugo.io/configuration/markup/#asciidoc
 # Tip: Run hugo --logLevel debug to examine Hugo's call to the Asciidoctor executable
 markup:
