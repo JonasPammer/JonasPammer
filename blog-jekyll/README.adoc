@@ -1,0 +1,318 @@
+= Jekyll + AsciiDoc Blog
+
+Jonas Pammer's technical blog built with Jekyll, Asciidoctor, and the Minimal Mistakes theme.
+
+== Features
+
+* ✅ **AsciiDoc Support** - Full Asciidoctor integration via `jekyll-asciidoc` plugin
+* ✅ **Diagram Support** - PlantUML, Mermaid, etc. via Kroki server
+* ✅ **Syntax Highlighting** - Rouge with GitHub theme
+* ✅ **Search** - Client-side search using Lunr.js
+* ✅ **Comments** - Giscus (GitHub Discussions)
+* ✅ **PWA** - Service worker and manifest for offline support
+* ✅ **Lazy Loading** - Automatic image lazy loading
+* ✅ **Copy to Clipboard** - Smart code block copying
+* ✅ **SEO Optimized** - jekyll-seo-tag plugin
+* ✅ **Responsive** - Mobile-friendly Minimal Mistakes theme
+
+== Tech Stack
+
+=== Core
+
+* https://jekyllrb.com/[Jekyll^] (4.3+) - Static site generator
+* https://asciidoctor.org/[Asciidoctor^] - Semantic markup processor
+* https://github.com/mmistakes/minimal-mistakes[Minimal Mistakes^] (12k+ stars) - Jekyll theme
+
+=== Plugins (Community-Driven)
+
+* https://github.com/asciidoctor/jekyll-asciidoc[jekyll-asciidoc^] - Official AsciiDoc plugin
+* https://github.com/asciidoctor/asciidoctor-kroki[asciidoctor-kroki^] - Diagram support
+* https://github.com/lavas-project/jekyll-pwa[jekyll-pwa-plugin^] (108 stars) - PWA support
+* https://github.com/gildesmarais/jekyll-loading-lazy[jekyll-loading-lazy^] (66 stars) - Image lazy loading
+* `jekyll-feed`, `jekyll-sitemap`, `jekyll-seo-tag` - Essential Jekyll plugins
+
+== Prerequisites
+
+* Ruby >= 3.2 (with development headers)
+* Bundler
+* Docker and Docker Compose (for Kroki diagrams)
+
+== Quick Start
+
+=== Installation
+
+[source,bash]
+----
+cd blog-jekyll
+
+# Install dependencies
+bundle install
+
+# Start Kroki server for diagrams
+docker-compose up -d
+----
+
+=== Development
+
+[source,bash]
+----
+# Start local development server
+bundle exec jekyll serve --livereload --drafts
+
+# Access at http://localhost:4000
+----
+
+=== Building
+
+[source,bash]
+----
+# Production build
+JEKYLL_ENV=production bundle exec jekyll build --verbose
+----
+
+=== Stop Kroki (optional)
+
+[source,bash]
+----
+docker-compose down
+----
+
+== Creating Content
+
+=== New Post (Text-Only)
+
+For posts without local images:
+
+[source,bash]
+----
+# Create single file post
+touch _posts/YYYY-MM-DD-title.adoc
+----
+
+Front matter example:
+
+[source,yaml]
+----
+---
+title: "My Post Title"
+date: 2025-01-15
+categories:
+  - Technology
+tags:
+  - jekyll
+  - asciidoc
+excerpt: "Brief description for search and social media"
+---
+----
+
+=== New Post (With Images)
+
+For posts with many local images/resources:
+
+[source,bash]
+----
+# Create page bundle
+mkdir _posts/YYYY-MM-DD-title
+touch _posts/YYYY-MM-DD-title/index.adoc
+# Add images to same directory
+----
+
+Reference images in AsciiDoc:
+
+[source,asciidoc]
+----
+image::example-image.jpg[Alt text]
+----
+
+== Project Structure
+
+----
+blog-jekyll/
+├── _config.yml           # Jekyll & plugin configuration
+├── Gemfile               # Ruby dependencies
+├── docker-compose.yml    # Kroki server setup
+├── service-worker.js     # PWA service worker
+├── manifest.webmanifest  # PWA manifest
+├── _posts/               # Blog posts (.adoc files)
+├── _pages/               # Static pages
+├── _includes/            # Reusable includes
+│   ├── head/custom.html
+│   ├── footer/custom.html
+│   ├── youtube.html      # {% include youtube.html id="..." %}
+│   └── codepen.html      # {% include codepen.html id="..." user="..." %}
+├── _layouts/             # Custom layouts (extends Minimal Mistakes)
+├── assets/
+│   ├── diagrams/         # Generated diagrams (gitignored)
+│   ├── images/           # Static images
+│   ├── js/
+│   │   └── copy-to-clipboard.js
+│   └── css/
+└── .github/
+    └── workflows/
+        └── deploy.yml    # Automated build & deploy
+----
+
+== Features in Detail
+
+=== Diagrams (Kroki)
+
+Supports PlantUML, Mermaid, Graphviz, Ditaa, and more:
+
+[source,asciidoc]
+----
+[plantuml,format=svg]
+....
+@startuml
+Alice -> Bob: Hello
+@enduml
+....
+
+[mermaid]
+....
+graph TD
+    A[Start] --> B[End]
+....
+----
+
+**Important:** Start Kroki with `docker-compose up -d` before building!
+
+=== Code Blocks with Copy Button
+
+All code blocks automatically get a copy button (📋) on hover:
+
+[source,asciidoc]
+----
+[source,bash]
+----
+cd my-project
+npm install
+----
+----
+
+Disable for specific blocks:
+
+[source,asciidoc]
+----
+[source,bash,role="nocopy"]
+----
+export API_KEY="placeholder"  # pragma: allowlist secret
+----
+----
+
+=== YouTube Embeds
+
+[source,asciidoc]
+----
+pass:[{% include youtube.html id="VIDEO_ID" %}]
+----
+
+=== CodePen Embeds
+
+[source,asciidoc]
+----
+pass:[{% include codepen.html id="PEN_ID" user="USERNAME" %}]
+----
+
+== Deployment
+
+=== GitHub Actions (Automatic)
+
+Push to `master`/`main` triggers automatic build and deploy:
+
+1. Starts Kroki containers
+2. Installs Ruby dependencies
+3. Builds Jekyll site
+4. Deploys to GitHub Pages
+
+=== Manual Deployment
+
+[source,bash]
+----
+# Build site
+JEKYLL_ENV=production bundle exec jekyll build
+
+# Deploy _site/ directory to hosting
+----
+
+== Migration from Hugo
+
+See link:../JEKYLL_MIGRATION_PLAN.md[JEKYLL_MIGRATION_PLAN.md] for complete migration guide.
+
+Key improvements over Hugo:
+
+* **Better Asciidoctor Integration** - No wrapper scripts, direct extension loading
+* **Less CSS Hacks** - Cleaner HTML output from Asciidoctor
+* **Community Plugins** - Mature ecosystem (PWA, lazy loading, SEO)
+* **Simpler Configuration** - Automatic attribute promotion, less boilerplate
+
+== Configuration
+
+=== _config.yml
+
+Main configuration file with:
+
+* Site metadata (title, description, URL)
+* Asciidoctor attributes (Kroki, Rouge, icons)
+* Plugin settings (PWA, search, comments)
+* Minimal Mistakes theme options
+
+=== Asciidoctor Attributes
+
+Set in `_config.yml` under `asciidoctor.attributes`:
+
+[source,yaml]
+----
+asciidoctor:
+  attributes:
+    kroki-server-url: http://localhost:8000
+    source-highlighter: rouge
+    rouge-style: github
+    icons: font
+    imagesdir: /assets/diagrams
+----
+
+== Troubleshooting
+
+=== Diagrams not generating
+
+[source,bash]
+----
+# Check Kroki is running
+curl http://localhost:8000/health
+
+# Restart Kroki
+docker-compose restart
+
+# Check Jekyll build logs
+bundle exec jekyll build --verbose
+----
+
+=== Bundle install fails
+
+[source,bash]
+----
+# Update bundler
+gem install bundler
+
+# Clear cache
+bundle clean --force
+rm Gemfile.lock
+bundle install
+----
+
+=== Service worker not updating
+
+Hard refresh browser (Ctrl+Shift+R) or clear service workers in DevTools.
+
+== License
+
+Content: © Jonas Pammer
+Code: MIT License (see LICENSE file)
+
+== Links
+
+* https://github.com/JonasPammer/JonasPammer[GitHub Repository^]
+* https://blog.jonaspammer.at[Live Blog^]
+* https://jekyllrb.com/docs/[Jekyll Documentation^]
+* https://docs.asciidoctor.org/[Asciidoctor Documentation^]
+* https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/[Minimal Mistakes Guide^]

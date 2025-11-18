@@ -1,0 +1,10 @@
+---
+layout: home
+author_profile: true
+---
+
+= Jonas Pammer's Blog
+
+Welcome to my technical blog where I share notes on software engineering, DevOps, and infrastructure.
+
+Browse recent posts below or use the search feature to find specific topics.

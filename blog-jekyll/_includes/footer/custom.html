@@ -1,0 +1,44 @@
+<!-- Source: Custom footer additions for Jonas Pammer's Blog -->
+
+<!-- Copy-to-clipboard functionality -->
+<script src="/assets/js/copy-to-clipboard.js"></script>
+
+<!-- PhotoSwipe v5 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe-lightbox.umd.min.js"></script>
+
+<!-- PhotoSwipe initialization -->
+<script>
+  if (typeof PhotoSwipeLightbox !== 'undefined') {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '.page__content',
+      children: 'a[data-pswp-width]',
+      pswpModule: PhotoSwipe
+    });
+    lightbox.init();
+  }
+</script>
+
+<!-- Service Worker Registration (PWA) -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('Service Worker registered:', registration);
+
+        // Check for updates
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // New service worker available, notify user
+              console.log('New content available, please refresh');
+            }
+          });
+        });
+      })
+      .catch((error) => {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>

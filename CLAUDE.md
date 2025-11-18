@@ -33,21 +33,25 @@ gh workflow run metrics.yml
 gh run list --workflow=metrics.yml
 ```
 
-### Hugo Blog Development
+### Jekyll Blog Development
 ```bash
-cd blog
+cd blog-jekyll
+
+# Install dependencies (first time only)
+bundle install
 
 # Start Kroki containers before building (required for diagram generation)
 docker-compose up -d
 
-# Start local development server
-hugo server --buildDrafts --disableFastRender
+# Start local development server with live reload
+bundle exec jekyll serve --livereload --drafts
 
 # Create new post (choose based on needs):
-hugo new posts/YYYY-MM-DD-title.adoc # Text-only post (single file, named after post)
-hugo new posts/YYYY-MM-DD-title/index.adoc # Image-heavy post (page bundle, images in same folder)
+touch _posts/YYYY-MM-DD-title.adoc # Text-only post (single file)
+mkdir _posts/YYYY-MM-DD-title && touch _posts/YYYY-MM-DD-title/index.adoc # Image-heavy post (page bundle)
 
-hugo --gc --minify # Build for production
+# Build for production
+JEKYLL_ENV=production bundle exec jekyll build --verbose
 
 # Stop Kroki containers (optional after build)
 docker-compose down
@@ -104,14 +108,14 @@ Self-contained AsciiDoc articles explaining complex topics:
 - `module_bundlers.adoc` - JavaScript bundling concepts
 - `transpilers.adoc` - Language compilation/transformation
 
-### Hugo + AsciiDoc Blog (`./blog`)
+### Jekyll + AsciiDoc Blog (`./blog-jekyll`)
 
 **Tech Stack:**
-- Hugo Extended (static site generator)
+- Jekyll 4.3+ (static site generator, Ruby-based)
 - Asciidoctor (semantic markup with native diagram support)
+- Minimal Mistakes theme (12k+ stars on GitHub)
 - GitHub Pages (deployment target)
 - GitHub Actions (automated build and deploy)
-- Minimalist theme (Git submodule: `blog/themes/PaperMod`)
 
 **Key Features:**
 - Client-Side search
@@ -122,52 +126,60 @@ Self-contained AsciiDoc articles explaining complex topics:
 - Reading time estimates
 - Less important: Lightbox (images/videos), Image gallery, YouTube embeds (privacy-friendly), Codepen embeds, Share buttons
 
+**Community Plugins Used:**
+- jekyll-asciidoc (official Asciidoctor plugin)
+- asciidoctor-kroki (diagram support)
+- jekyll-pwa-plugin (108 stars - PWA with service worker)
+- jekyll-loading-lazy (66 stars - native image lazy loading)
+- jekyll-feed, jekyll-sitemap, jekyll-seo-tag (essential plugins)
+
 **File Structure:**
 ```
-                                        #
-blog/
-├── config.toml                         # Hugo + AsciiDoc configuration
-├── Gemfile                             # Asciidoctor dependencies
-├── content/
-│   ├── posts/
-│   │   ├── my-text-post.adoc           # Single file (text-only posts)
-│   │   └── image-heavy-post/           # Page bundle (with images)
-│   │       ├── index.adoc
-│   │       ├── image1.jpg
-│   │       └── image2.jpg
+blog-jekyll/
+├── _config.yml                  # Jekyll + plugin configuration
+├── Gemfile                      # Ruby dependencies
+├── docker-compose.yml           # Kroki server setup
+├── service-worker.js            # PWA service worker (processed by plugin)
+├── manifest.webmanifest         # PWA manifest
+├── _posts/                      # Blog posts
+│   ├── YYYY-MM-DD-title.adoc    # Single file (text-only posts)
+│   └── YYYY-MM-DD-title/        # Page bundle (with images)
+│       ├── index.adoc
+│       ├── image1.jpg
+│       └── image2.jpg
+├── _pages/                      # Static pages
 │   ├── about.adoc
 │   └── search.md
-├── layouts/
-│   ├── _default/
-│   │   └── index.json                   # Search index generator
-│   ├── partials/                        # head-end, footer-end, giscus, etc.
-│   ├── shortcodes/                      # image-gallery, youtube, codepen
-│   └── search/
-├── static/
+├── _includes/                   # Reusable includes
+│   ├── head/custom.html         # Custom head content
+│   ├── footer/custom.html       # Custom footer content
+│   ├── youtube.html             # {% include youtube.html id="..." %}
+│   └── codepen.html             # {% include codepen.html id="..." user="..." %}
+├── _layouts/                    # Custom layouts (extends Minimal Mistakes)
+├── assets/
+│   ├── diagrams/                # Generated diagrams (gitignored)
+│   ├── images/                  # Static images
 │   ├── js/
-│   │   ├── lightbox.js
-│   │   └── copy-to-clipboard.js         # From Asciidoctor Docs UI
+│   │   └── copy-to-clipboard.js # From Asciidoctor Docs UI
 │   └── css/
-│       ├── lightbox.css
-│       └── copy-button.css              # From Asciidoctor Docs UI
-└── themes/PaperMod/                     # Git submodule
+└── .github/
+    └── workflows/
+        └── deploy.yml           # Automated build & deploy
 ```
 
 **Hybrid Post Structure:**
 
-Hugo supports two content organization approaches (see [official documentation](https://gohugo.io/content-management/page-bundles/)):
+Jekyll supports two content organization approaches:
 
-- **Single-file pages**: Create as standalone `.adoc` files (e.g., `posts/2025-01-15-my-thoughts.adoc`)
-  - Simple, flat structure with file named after post
+- **Single-file posts**: Create as standalone `.adoc` files (e.g., `_posts/2025-01-15-my-thoughts.adoc`)
+  - Simple, flat structure named `YYYY-MM-DD-title.adoc`
   - Best for: Text-only articles, posts using external/remote images
-  - Resources must be in `static/` folder
+  - Resources must be in `assets/` folder
 
-- **Leaf bundles**: Create as directories with `index.adoc` (e.g., `posts/2025-01-15-gallery/index.adoc`)
+- **Page bundles**: Create as directories with `index.adoc` (e.g., `_posts/2025-01-15-gallery/index.adoc`)
   - Groups content and resources (images, PDFs) together
   - Best for: Tutorials with screenshots, photo galleries, posts with many local images
-  - Resources accessible via Hugo's `.Resources` method for image processing
-
-Reference: https://gohugo.io/content-management/organization/ and https://gohugo.io/content-management/page-bundles/
+  - Reference images directly: `image::example.jpg[Alt text]`
 
 **Source Verification:**
 
@@ -185,25 +197,21 @@ Features:
 
 **Diagram Support:**
 
-The blog uses Kroki for diagram generation. **Historical Context:**
+The blog uses Kroki for diagram generation (PlantUML, Mermaid, Graphviz, Ditaa, etc.).
 
-**Original Problem (Resolved):**
-1. `asciidoctor-diagram-plantuml` gem was broken with Java reflection error:
-   ```
-   Cannot invoke java.lang.reflect.Method.invoke because
-   org.asciidoctor.diagram.plantuml.PlantUML.SET_LOCAL_IMAGE_LIMIT is null
-   ```
-2. Diagrams were generating in wrong location (blog root instead of `static/diagrams/`)
-
-**Solution Implemented:**
-- Use Kroki server (Docker containers) for ALL diagram types
+**Configuration:**
 - **Gemfile:** `asciidoctor-kroki` (NOT `asciidoctor-diagram` or `asciidoctor-diagram-plantuml`)
-- **docker-compose.yml:** 4 services (kroki + mermaid + excalidraw)
-- **config.toml:**
-  - Extension: `asciidoctor-kroki`
-  - Attributes: `kroki-server-url = "http://localhost:8000"`, `kroki-fetch-diagram = true`
-  - Diagram output: `imagesoutdir = "static/diagrams"`, `imagesdir = "/blog/diagrams"`
-- **Gitignored:** `/static/diagrams/` (regenerated at build time)
+- **docker-compose.yml:** 4 services (kroki + mermaid + bpmn + excalidraw)
+- **_config.yml:**
+  - Under `asciidoctor.attributes`:
+    - `kroki-server-url: http://localhost:8000`
+    - `kroki-fetch-diagram: true`
+    - `imagesdir: /assets/diagrams`
+    - `imagesoutdir: assets/diagrams`
+- **Gitignored:** `assets/diagrams/` (regenerated at build time)
+
+**Usage:**
+Start Kroki before building: `docker-compose up -d`
 
 **Syntax Highlighting:**
 - Asciidoctor uses Rouge for syntax highlighting (`source-highlighter = "rouge"`)
@@ -213,7 +221,27 @@ The blog uses Kroki for diagram generation. **Historical Context:**
 
 **Deployment:**
 - Automatic via GitHub Actions on push to master
-- Workflow uses peaceiris/actions-hugo@v3 and ruby/setup-ruby@v1
+- Workflow uses ruby/setup-ruby@v1 for dependencies
+- Starts Kroki containers during build
+- Builds with `bundle exec jekyll build`
+- Deploys to GitHub Pages using actions/deploy-pages@v4
+
+**Front Matter (Jekyll vs Hugo):**
+- Jekyll uses YAML front matter with automatic attribute promotion
+- Use `published: false` for drafts (vs Hugo's `draft: true`)
+- Categories/tags as YAML arrays
+- Example:
+  ```yaml
+  ---
+  title: "My Post"
+  date: 2025-01-15
+  categories:
+    - Technology
+  tags:
+    - jekyll
+    - asciidoc
+  ---
+  ```
 
 ### GitHub Actions Workflows
 

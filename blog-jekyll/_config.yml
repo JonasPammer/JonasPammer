@@ -1,0 +1,240 @@
+# Jekyll Configuration for Jonas Pammer's Blog
+# Migration from Hugo to Jekyll for better Asciidoctor support
+
+# Site Settings
+title: "Jonas Pammer's Blog"
+name: "Jonas Pammer"
+description: "Technical blog about software engineering, DevOps, and infrastructure"
+url: "https://blog.jonaspammer.at"
+baseurl: ""
+repository: "JonasPammer/JonasPammer"
+
+# Author Information
+author:
+  name: "Jonas Pammer"
+  avatar: "https://avatars.githubusercontent.com/u/32995541?v=4"
+  bio: "Software Engineer & DevOps Enthusiast"
+  location: "Austria"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/JonasPammer"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/jonaspammer"
+
+# Theme Configuration
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "default"  # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Reading Files
+include:
+  - _pages
+  - .htaccess
+
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - docker-compose.yml
+  - /docs
+  - /test
+
+keep_files:
+  - .git
+  - .svn
+
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# AsciiDoc Configuration
+# https://github.com/asciidoctor/jekyll-asciidoc
+asciidoc:
+  processor: asciidoctor
+  ext: asciidoctor,asciidoc,adoc,ad
+
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    # Syntax highlighting via Rouge
+    source-highlighter: rouge
+    rouge-style: github
+    rouge-css: style  # Inline styles (no external CSS needed)
+
+    # Icons
+    icons: font
+
+    # Diagrams via Kroki (requires docker-compose up)
+    experimental: true
+    imagesdir: /assets/diagrams
+    imagesoutdir: assets/diagrams
+    kroki-server-url: http://localhost:8000
+    kroki-fetch-diagram: true
+
+    # Table of contents
+    toc: auto
+    toclevels: 3
+
+    # Allow URLs in include directives
+    allow-uri-read: true
+
+    # Miscellaneous
+    author-name: Jonas Pammer
+    sectanchors: true
+    idprefix: ""
+    idseparator: "-"
+
+# Markdown Processing (for non-AsciiDoc files)
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..3
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter: rouge
+
+# Outputting
+permalink: /posts/:title/
+paginate: 10
+paginate_path: /page:num/
+timezone: Europe/Vienna
+
+# Plugins
+plugins:
+  - jekyll-asciidoc
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-pwa-plugin
+  - jekyll-loading-lazy
+
+# PWA Configuration
+# Plugin: https://github.com/lavas-project/jekyll-pwa
+pwa:
+  enabled: true
+  dest_js_directory: assets/js
+  sw_src_filepath: service-worker.js
+  precache_recent_posts_num: 5
+  precache_glob_patterns:
+    - "{js,css,fonts}/**/*.{js,css,eot,svg,ttf,woff,woff2}"
+    - "assets/images/*.{png,jpg,jpeg,gif,svg}"
+    - index.html
+
+# Minimal Mistakes Theme Configuration
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+
+# Site Settings
+locale: "en-US"
+title_separator: "-"
+subtitle: "Technical Notes & Experiments"
+words_per_minute: 200
+
+# Comments - Using Giscus (GitHub Discussions)
+comments:
+  provider: "giscus"
+  giscus:
+    repo_id: "R_kgDOGtxkyg"
+    category_name: "Q&A"
+    category_id: "DIC_kwDOGtxkys4Cxk_t"
+    discussion_term: "title"
+    reactions_enabled: "1"
+    theme: "preferred_color_scheme"
+
+# Search
+search: true
+search_full_content: true
+search_provider: lunr
+lunr:
+  search_within_pages: true
+
+# SEO
+og_image: "https://avatars.githubusercontent.com/u/32995541?v=4"
+social:
+  type: Person
+  name: Jonas Pammer
+  links:
+    - "https://github.com/JonasPammer"
+    - "https://linkedin.com/in/jonaspammer"
+
+# Analytics (optional - uncomment to enable)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "UA-XXXXXXXXX-X"
+
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/JonasPammer"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/jonaspammer"
+
+# Reading Files
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: false
+      related: true
+      show_date: true
+      toc: true
+      toc_sticky: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

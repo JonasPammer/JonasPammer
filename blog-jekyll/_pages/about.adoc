@@ -1,0 +1,31 @@
+---
+layout: single
+title: About
+permalink: /about/
+---
+
+= About Jonas Pammer
+
+Hi! I'm Jonas Pammer, a software engineer passionate about DevOps, infrastructure automation, and clean code.
+
+== What I Do
+
+* Software Engineering & Architecture
+* DevOps & Infrastructure Automation
+* Technical Documentation & Knowledge Sharing
+
+== This Blog
+
+This blog serves as my digital garden where I document technical explorations, solutions to interesting problems, and lessons learned from software engineering projects.
+
+Built with:
+
+* https://jekyllrb.com/[Jekyll^] - Static site generator
+* https://asciidoctor.org/[Asciidoctor^] - Semantic markup
+* https://github.com/mmistakes/minimal-mistakes[Minimal Mistakes^] - Theme
+* https://pages.github.com/[GitHub Pages^] - Hosting
+
+== Connect
+
+* https://github.com/JonasPammer[GitHub^]
+* https://linkedin.com/in/jonaspammer[LinkedIn^]

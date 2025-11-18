@@ -1,0 +1,35 @@
+---
+services:
+  kroki:
+    image: yuzutech/kroki:latest
+    container_name: kroki-server
+    ports:
+      - "8000:8000"
+    environment:
+      - KROKI_SAFE_MODE=secure
+      - KROKI_MAX_URI_LENGTH=8000
+      - KROKI_MERMAID_HOST=mermaid
+      - KROKI_EXCALIDRAW_HOST=excalidraw
+    depends_on:
+      - mermaid
+      - excalidraw
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mermaid:
+    image: yuzutech/kroki-mermaid:latest
+    container_name: kroki-mermaid
+    expose:
+      - "8002"
+    restart: unless-stopped
+
+  excalidraw:
+    image: yuzutech/kroki-excalidraw:latest
+    container_name: kroki-excalidraw
+    expose:
+      - "8004"
+    restart: unless-stopped
