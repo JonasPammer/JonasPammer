@@ -1,6 +1,37 @@
-# Gemfile for Hugo + AsciiDoc blog dependencies
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'rouge'
-gem 'asciidoctor'
-gem 'asciidoctor-kroki'
+source "https://rubygems.org"
+
+# Core Jekyll
+gem "jekyll", "~> 4.3"
+
+# Theme: Minimal Mistakes (12k+ stars on GitHub)
+# https://github.com/mmistakes/minimal-mistakes
+gem "minimal-mistakes-jekyll"
+
+# AsciiDoc support
+gem "jekyll-asciidoc"
+gem "asciidoctor"
+gem "asciidoctor-kroki"  # Diagram support via Kroki
+gem "rouge"  # Syntax highlighting
+
+# PWA support (108 stars)
+# https://github.com/lavas-project/jekyll-pwa
+gem "jekyll-pwa-plugin"
+
+# Image lazy loading (66 stars)
+# https://github.com/gildesmarais/jekyll-loading-lazy
+gem "jekyll-loading-lazy"
+
+# Essential Jekyll plugins
+gem "jekyll-include-cache"  # Required by Minimal Mistakes
+gem "jekyll-feed"  # RSS feed
+gem "jekyll-sitemap"  # Sitemap
+gem "jekyll-seo-tag"  # SEO meta tags
+gem "jekyll-paginate"  # Pagination
+gem "jekyll-gist"  # GitHub Gists embedding
+
+# Development
+group :development do
+  gem "webrick"  # Required for Ruby 3.0+
+end

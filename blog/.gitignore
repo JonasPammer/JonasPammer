@@ -1,22 +1,29 @@
-# Generated diagram files (regenerated at build time via Kroki)
-/static/diagrams/
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
 
-# Created by https://www.toptal.com/developers/gitignore/api/hugo
-# Edit at https://www.toptal.com/developers/gitignore?templates=hugo
+# Bundler
+.bundle/
+Gemfile.lock
 
-### Hugo ###
-# Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
+# Diagrams (regenerated at build time)
+assets/diagrams/
 
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
+# macOS
+.DS_Store
 
-# Temporary lock file while building
-/.hugo_build.lock
+# Editors
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
 
-# End of https://www.toptal.com/developers/gitignore/api/hugo
+# Logs
+*.log
+
+# Temporary files
+tmp/

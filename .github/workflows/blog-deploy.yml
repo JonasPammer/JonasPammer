@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       # Kroki service for diagram generation (PlantUML, Mermaid, etc.)
-      # DUPLICATE OF docker-compose.yaml
+      # Mirrors docker-compose.yml for CI environment
       kroki:
         image: yuzutech/kroki:latest
         ports:
@@ -37,67 +37,40 @@ jobs:
         env:
           KROKI_SAFE_MODE: secure
           KROKI_MERMAID_HOST: mermaid
+          KROKI_BPMN_HOST: bpmn
           KROKI_EXCALIDRAW_HOST: excalidraw
       mermaid:
         image: yuzutech/kroki-mermaid:latest
+      bpmn:
+        image: yuzutech/kroki-bpmn:latest
       excalidraw:
         image: yuzutech/kroki-excalidraw:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          extended: true
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: false  # Disable automatic bundler caching
+          bundler-cache: true
           working-directory: ./blog
-
-      - name: Install Ruby gems
-        run: |
-          bundle config set --local deployment 'false'
-          bundle install --jobs 4 --retry 3
-
-      - name: Cache Hugo modules
-        uses: actions/cache@v4
-        with:
-          path: /home/runner/.cache/hugo_cache
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-
-
-      - name: Cache resources folder
-        uses: actions/cache@v4
-        with:
-          path: blog/resources
-          key: ${{ runner.os }}-hugo-resources-${{ hashFiles('blog/content/**/*.adoc', 'blog/content/**/*.md') }}
-          restore-keys: |
-            ${{ runner.os }}-hugo-resources-
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Build with Hugo
+      - name: Build with Jekyll
         env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: |
-          hugo \
-            --gc
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --verbose
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./blog/public
+          path: ./blog/_site
 
   deploy:
     environment:
