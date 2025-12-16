@@ -39,8 +39,9 @@ and generally like to always try to understand most of the things I stumble acro
 // link:demystifying/conventional_commits.adoc[Conventional Commits]
 
 [[current]]
-== 🔝 Current Primary Fascination::
-Fancy Library-Packed CookieCutter-Django with HTMX, Grails/Geb
+== Current Primary Projects
+Fancy Library-Packed CookieCutter-Django with HTMX;
+Grails/Geb
 
 // Programming Languages
 image:https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge[Python]
@@ -57,7 +58,7 @@ image:https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&log
 image:https://img.shields.io/badge/Ansible-black?logo=ansible&logoColor=white&style=for-the-badge[Ansible]
 
 [[stars]]
-=== 🙋‍♂️ I actively star repositories I find useful and interesting
+// === 🙋‍♂️ I actively star repositories I find useful and interesting
 Below is an automatically generated overview of my GitHub profile, showing mostly my https://github.com/JonasPammer?tab=stars[recently starred projects] (which may give somewhat of an indication of what I'm currently onto):
 
 image::./github-metrics.svg[Metrics]
